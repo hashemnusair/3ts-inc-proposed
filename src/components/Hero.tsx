@@ -33,20 +33,13 @@ export default function Hero() {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 w-full flex-1 flex flex-col justify-between px-6 md:px-16 lg:px-24 pt-16 md:pt-20 pb-12">
+      <div className="relative z-10 w-full flex-1 flex flex-col justify-between px-6 md:px-16 lg:px-24 pt-40 md:pt-56 pb-12">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
           className="max-w-3xl"
         >
-          <div className="hidden md:flex flex-col items-start mb-10 md:mb-12">
-            <span className="text-gold text-xs font-semibold tracking-[0.25em] uppercase mb-4">
-              Senior Advisory For Complex Leadership Moments
-            </span>
-            <div className="w-12 h-[2px] bg-gold/60"></div>
-          </div>
-
           <h1 className="font-serif text-4xl md:text-6xl lg:text-7xl leading-[1.1] tracking-tight text-white mb-8 max-w-2xl">
             For the alignment problems that stall transformations.
           </h1>

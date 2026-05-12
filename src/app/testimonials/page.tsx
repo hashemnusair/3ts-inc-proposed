@@ -54,7 +54,7 @@ export default function TestimonialsPage() {
         <div className="max-w-4xl mx-auto">
           <div className="flex flex-col items-start space-y-4 mb-8">
             <span className="text-gold text-xs font-semibold tracking-[0.2em] uppercase">
-              Client Perspectives
+              Client Reflections
             </span>
             <div className="w-12 h-[2px] bg-gold/60"></div>
           </div>
