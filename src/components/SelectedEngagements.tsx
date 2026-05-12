@@ -50,8 +50,15 @@ export default function SelectedEngagements() {
           {/* A highly simplified dotted path to represent the world map feeling without massive inline code */}
           <g fill="#A9835A">
             {Array.from({ length: 400 }).map((_, i) => {
-              const x = Math.random() * 1000;
-              const y = Math.random() * 500;
+              // Deterministic pseudo-random generation to prevent hydration mismatch errors!
+              const randX = Math.sin(i * 123.45) * 10000;
+              const randY = Math.sin(i * 678.9) * 10000;
+              const randNoise = Math.sin(i * 42.42) * 10000;
+              
+              const x = (randX - Math.floor(randX)) * 1000;
+              const y = (randY - Math.floor(randY)) * 500;
+              const noise = randNoise - Math.floor(randNoise);
+
               // Roughly mask out oceans
               const inAmerica = x > 100 && x < 350 && y > 100 && y < 400;
               const inEurasia = x > 450 && x < 900 && y > 50 && y < 350;
@@ -59,7 +66,7 @@ export default function SelectedEngagements() {
               
               if (inAmerica || inEurasia || inAfrica) {
                 // Add some noise to the boundaries
-                if (Math.random() > 0.4) {
+                if (noise > 0.4) {
                   return <circle key={i} cx={x} cy={y} r="2" />;
                 }
               }
