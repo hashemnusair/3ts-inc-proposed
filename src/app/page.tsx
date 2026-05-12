@@ -7,7 +7,6 @@ import SelectedEngagements from "@/components/SelectedEngagements";
 import AboutUs from "@/components/AboutUs";
 import Testimonials from "@/components/Testimonials";
 import Footer from "@/components/Footer";
-import ImageBreak from "@/components/ImageBreak";
 
 export default function Home() {
   return (
@@ -15,21 +14,9 @@ export default function Home() {
       <Navbar />
       <Hero />
       <WhoWeWorkWith />
-      <ImageBreak
-        src="/notebookEtc.png"
-        alt="Working session"
-        height="h-[35vh] md:h-[50vh]"
-        position="center"
-      />
       <WhatWeDo />
       <WhyAndImpact />
       <SelectedEngagements />
-      <ImageBreak
-        src="/vaseANDfooter.png"
-        alt="3Ts office"
-        height="h-[35vh] md:h-[45vh]"
-        position="top"
-      />
       <AboutUs />
       <Testimonials />
       <Footer />
