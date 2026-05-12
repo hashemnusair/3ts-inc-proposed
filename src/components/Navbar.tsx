@@ -78,9 +78,27 @@ export default function Navbar() {
     };
   }, [isOpen]);
 
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 80);
+    };
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const isHome = pathname === "/";
+
   return (
     <>
-      <header className="w-full bg-cream fixed top-0 left-0 right-0 z-[60] border-b border-charcoal/5">
+      <header
+        className={`w-full fixed top-0 left-0 right-0 z-[60] transition-all duration-500 ${
+          scrolled || !isHome
+            ? "bg-cream/95 backdrop-blur-md border-b border-charcoal/5"
+            : "bg-transparent border-b border-transparent"
+        }`}
+      >
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -89,18 +107,18 @@ export default function Navbar() {
         >
           <div className="flex items-center space-x-6">
             <Link href="/" className="flex flex-col z-[70]">
-              <span className="font-serif text-2xl md:text-3xl tracking-tight text-charcoal">
+              <span className={`font-serif text-2xl md:text-3xl tracking-tight transition-colors duration-500 ${isHome && !scrolled ? 'text-white' : 'text-charcoal'}`}>
                 3Ts Consulting
               </span>
               <span className="font-sans text-[10px] md:text-xs tracking-widest text-gold mt-1 uppercase">
                 Thoroughly. Thought. Through.
               </span>
             </Link>
-            <div className="hidden md:block w-px h-10 bg-charcoal/20"></div>
+            <div className={`hidden md:block w-px h-10 transition-colors duration-500 ${isHome && !scrolled ? 'bg-white/20' : 'bg-charcoal/20'}`}></div>
           </div>
 
           {/* Desktop Links */}
-          <nav className="hidden md:flex items-center space-x-8 text-sm font-medium tracking-widest text-charcoal/80 uppercase">
+          <nav className={`hidden md:flex items-center space-x-8 text-sm font-medium tracking-widest uppercase transition-colors duration-500 ${isHome && !scrolled ? 'text-white/80' : 'text-charcoal/80'}`}>
             {links.slice(0, 5).map((link) => (
               <Link key={link.href} href={link.href} className="hover:text-gold transition-colors">
                 {link.label}
@@ -110,10 +128,10 @@ export default function Navbar() {
 
           {/* Desktop Contact */}
           <div className="hidden md:flex items-center space-x-6">
-            <div className="w-px h-10 bg-charcoal/20"></div>
+            <div className={`w-px h-10 transition-colors duration-500 ${isHome && !scrolled ? 'bg-white/20' : 'bg-charcoal/20'}`}></div>
             <Link
               href="/contact"
-              className="text-sm font-medium tracking-widest text-charcoal/80 uppercase hover:text-gold transition-colors"
+              className={`text-sm font-medium tracking-widest uppercase hover:text-gold transition-colors duration-500 ${isHome && !scrolled ? 'text-white/80' : 'text-charcoal/80'}`}
             >
               Contact
             </Link>
@@ -121,7 +139,7 @@ export default function Navbar() {
 
           {/* Mobile Hamburger Toggle */}
           <button
-            className="md:hidden flex items-center justify-center p-2 -mr-2 z-[70] text-charcoal hover:text-gold transition-colors focus:outline-none group"
+            className={`md:hidden flex items-center justify-center p-2 -mr-2 z-[70] hover:text-gold transition-colors duration-500 focus:outline-none group ${isHome && !scrolled && !isOpen ? 'text-white' : 'text-charcoal'}`}
             onClick={() => setIsOpen(!isOpen)}
             aria-expanded={isOpen}
             aria-label={isOpen ? "Close menu" : "Open menu"}
