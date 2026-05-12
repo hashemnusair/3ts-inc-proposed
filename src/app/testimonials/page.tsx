@@ -1,6 +1,14 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import Image from "next/image";
+import { pageMetadata } from "@/lib/metadata";
+
+export const metadata = pageMetadata({
+  title: "Testimonials — 3Ts Consulting",
+  description:
+    "Client reflections on working with Shareef Khatib through leadership, communication, and organizational transitions.",
+  path: "/testimonials",
+  image: "/og/testimonials.webp",
+});
 
 const testimonials = [
   {
@@ -77,26 +85,6 @@ export default function TestimonialsPage() {
             ))}
           </div>
         </div>
-      </section>
-
-      {/* Dark Footer Break for contrast */}
-      <section className="w-full py-20 px-6 md:px-16 lg:px-24 bg-[#111613] relative overflow-hidden">
-         <div className="absolute inset-0 opacity-20 mix-blend-overlay z-0">
-            <Image
-              src="/vaseANDfooter.png"
-              alt="Decorative graphic"
-              fill
-              className="object-cover object-center"
-            />
-         </div>
-         <div className="max-w-4xl mx-auto text-center relative z-10 py-12">
-            <h3 className="text-cream font-serif text-3xl md:text-4xl mb-8 tracking-tight">
-              Ready to design your engagement?
-            </h3>
-            <a href="/contact" className="inline-block border border-cream/30 text-cream px-10 py-4 text-sm tracking-widest uppercase hover:bg-cream hover:text-[#111613] transition-all">
-              Request a Consultation
-            </a>
-         </div>
       </section>
 
       <Footer />

@@ -39,7 +39,30 @@ export default function AboutUs() {
               Development & Change Leadership. British and Jordanian; working
               across the region in English, French, and Arabic.
             </p>
+            <p className="text-charcoal/70 text-base md:text-lg leading-relaxed">
+              The work is serious because the rooms are serious, but its purpose
+              remains human: better collaboration, more durable cooperation, and
+              the conditions where kindness can still thrive.
+            </p>
           </motion.div>
+
+          <div className="mt-10 grid grid-cols-2 gap-px bg-charcoal/10 border border-charcoal/10">
+            {[
+              ["18+", "years across complex international contexts"],
+              ["$161M", "largest portfolio led through closeout"],
+              ["18", "World Bank leadership cohorts delivered"],
+              ["3", "working languages: English, French, Arabic"],
+            ].map(([value, label]) => (
+              <div key={value} className="bg-[#f8f6f2] p-5">
+                <div className="font-serif text-3xl text-charcoal mb-2">
+                  {value}
+                </div>
+                <div className="text-[11px] uppercase tracking-[0.16em] leading-relaxed text-charcoal/55">
+                  {label}
+                </div>
+              </div>
+            ))}
+          </div>
 
           <motion.div
             initial={{ opacity: 0 }}
@@ -63,15 +86,22 @@ export default function AboutUs() {
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 1, ease: "easeOut" }}
-          className="w-full lg:w-1/2 relative h-[400px] md:h-[500px] lg:h-[600px] shadow-[0_20px_60px_-15px_rgba(0,0,0,0.1)]"
+          className="w-full lg:w-1/2 relative h-[420px] md:h-[560px] lg:h-[640px] shadow-[0_20px_60px_-15px_rgba(0,0,0,0.14)] bg-charcoal overflow-hidden"
         >
           <Image
-            src="/notebookEtc.png"
-            alt="Notebook and pen"
+            src="/shareef-khatib.webp"
+            alt="Shareef Samir Khatib"
             fill
-            className="object-cover"
+            className="object-cover grayscale contrast-110 brightness-95"
+            sizes="(min-width: 1024px) 50vw, 100vw"
           />
-          {/* Subtle inner border for the "Liquid Glass" feel as per rules, even though it's an image */}
+          <div className="absolute inset-0 bg-gradient-to-t from-charcoal/55 via-transparent to-transparent" />
+          <div className="absolute bottom-8 left-8 right-8 text-cream">
+            <div className="font-serif text-2xl">Shareef Samir Khatib</div>
+            <div className="mt-2 text-xs uppercase tracking-[0.18em] text-gold">
+              Principal Consultant
+            </div>
+          </div>
           <div className="absolute inset-0 border border-white/10 pointer-events-none"></div>
         </motion.div>
       </div>

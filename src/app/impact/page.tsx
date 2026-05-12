@@ -1,6 +1,15 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Link from "next/link";
+import { pageMetadata } from "@/lib/metadata";
+
+export const metadata = pageMetadata({
+  title: "Selected Impact — 3Ts Consulting",
+  description:
+    "Representative impact across leadership coaching, team alignment, organizational change, complex programs, and stakeholder engagement.",
+  path: "/impact",
+  image: "/og/impact.webp",
+});
 
 export default function ImpactPage() {
   return (

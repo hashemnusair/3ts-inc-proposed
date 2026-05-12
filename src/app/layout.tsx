@@ -27,9 +27,9 @@ export const metadata: Metadata = {
     siteName: "3Ts Consulting",
     images: [
       {
-        url: "/icon.png",
-        width: 512,
-        height: 512,
+        url: "/og/home.webp",
+        width: 1200,
+        height: 630,
         alt: "3Ts Consulting",
       },
     ],
@@ -37,11 +37,11 @@ export const metadata: Metadata = {
     type: "website",
   },
   twitter: {
-    card: "summary",
+    card: "summary_large_image",
     title: "3Ts Consulting — Senior Advisory for Complex Leadership Moments",
     description:
       "Private advisory for governments, multilaterals, sovereign-backed institutions, family enterprises, and large private-sector organizations.",
-    images: ["/icon.png"],
+    images: ["/og/home.webp"],
   },
 };
 

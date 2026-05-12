@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import type { Variants } from "framer-motion";
 import Link from "next/link";
 
 const cases = [
@@ -32,10 +33,24 @@ const containerVariants = {
   },
 };
 
-const cardVariants: any = {
+const cardVariants: Variants = {
   hidden: { opacity: 0, y: 30 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: "easeOut" } },
 };
+
+const mapDots = Array.from({ length: 400 }).flatMap((_, i) => {
+  const x = ((i * 2654435761) >>> 0) % 1000;
+  const y = ((i * 1597334677) >>> 0) % 500;
+  const noise = ((i * 3812015801) >>> 0) % 10;
+
+  const inAmerica = x > 100 && x < 350 && y > 100 && y < 400;
+  const inEurasia = x > 450 && x < 900 && y > 50 && y < 350;
+  const inAfrica = x > 450 && x < 650 && y > 250 && y < 450;
+
+  return (inAmerica || inEurasia || inAfrica) && noise > 3
+    ? [{ id: i, x, y }]
+    : [];
+});
 
 export default function SelectedEngagements() {
   return (
@@ -49,29 +64,9 @@ export default function SelectedEngagements() {
         >
           {/* A highly simplified dotted path to represent the world map feeling without massive inline code */}
           <g fill="#A9835A">
-            {Array.from({ length: 400 }).map((_, i) => {
-              // Deterministic pseudo-random generation to prevent hydration mismatch errors!
-              const randX = Math.sin(i * 123.45) * 10000;
-              const randY = Math.sin(i * 678.9) * 10000;
-              const randNoise = Math.sin(i * 42.42) * 10000;
-              
-              const x = (randX - Math.floor(randX)) * 1000;
-              const y = (randY - Math.floor(randY)) * 500;
-              const noise = randNoise - Math.floor(randNoise);
-
-              // Roughly mask out oceans
-              const inAmerica = x > 100 && x < 350 && y > 100 && y < 400;
-              const inEurasia = x > 450 && x < 900 && y > 50 && y < 350;
-              const inAfrica = x > 450 && x < 650 && y > 250 && y < 450;
-              
-              if (inAmerica || inEurasia || inAfrica) {
-                // Add some noise to the boundaries
-                if (noise > 0.4) {
-                  return <circle key={i} cx={x} cy={y} r="2" />;
-                }
-              }
-              return null;
-            })}
+            {mapDots.map((dot) => (
+              <circle key={dot.id} cx={dot.x} cy={dot.y} r="2" />
+            ))}
           </g>
           {/* Highlight Points */}
           <circle cx="580" cy="220" r="6" fill="#1E2520" /> {/* Saudi Arabia */}

@@ -7,6 +7,16 @@ import SelectedEngagements from "@/components/SelectedEngagements";
 import AboutUs from "@/components/AboutUs";
 import Testimonials from "@/components/Testimonials";
 import Footer from "@/components/Footer";
+import ImageBreak from "@/components/ImageBreak";
+import { pageMetadata } from "@/lib/metadata";
+
+export const metadata = pageMetadata({
+  title: "3Ts Consulting — Senior Advisory for Complex Leadership Moments",
+  description:
+    "Private advisory for sponsors and senior leaders navigating complex alignment, reform, and consequential leadership transitions.",
+  path: "/",
+  image: "/og/home.webp",
+});
 
 export default function Home() {
   return (
@@ -14,10 +24,22 @@ export default function Home() {
       <Navbar />
       <Hero />
       <WhoWeWorkWith />
+      <ImageBreak
+        src="/home-convening.webp"
+        alt="Prepared executive convening room"
+        height="h-[42vh] md:h-[58vh]"
+        position="center"
+      />
       <WhatWeDo />
       <WhyAndImpact />
       <SelectedEngagements />
       <AboutUs />
+      <ImageBreak
+        src="/home-kindness.webp"
+        alt="Quiet leadership conversation setting"
+        height="h-[38vh] md:h-[52vh]"
+        position="center"
+      />
       <Testimonials />
       <Footer />
     </main>

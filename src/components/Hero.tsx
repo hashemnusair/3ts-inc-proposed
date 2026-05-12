@@ -33,23 +33,23 @@ export default function Hero() {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 w-full flex-1 flex flex-col justify-between px-6 md:px-16 lg:px-24 pt-40 md:pt-56 pb-12">
+      <div className="relative z-10 w-full max-w-[100vw] flex-1 flex flex-col justify-between px-6 md:px-16 lg:px-24 pt-40 md:pt-56 pb-12 overflow-hidden">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="max-w-3xl"
+          className="w-full max-w-[calc(100vw-3rem)] md:max-w-3xl"
         >
-          <h1 className="font-serif text-4xl md:text-6xl lg:text-7xl leading-[1.1] tracking-tight text-white mb-8 max-w-2xl">
+          <h1 className="w-full max-w-[19rem] md:max-w-2xl font-serif text-4xl md:text-6xl lg:text-7xl leading-[1.08] md:leading-[1.1] tracking-tight text-white mb-8 md:text-balance">
             For the alignment problems that stall transformations.
           </h1>
 
-          <p className="text-white/70 text-base md:text-lg max-w-lg leading-relaxed mb-10 md:mb-12">
+          <p className="w-full max-w-[20rem] md:max-w-lg text-white/70 text-base md:text-lg leading-relaxed mb-10 md:mb-12 text-pretty">
             Grounded in neuroscience, governance, and 20 years of global experience — helping leadership teams navigate complexity and move forward with clarity.
           </p>
 
-          <Link href="/contact">
-            <button className="bg-white/10 backdrop-blur-sm border border-white/20 text-white px-8 py-4 text-sm tracking-widest uppercase font-medium hover:bg-white/20 transition-all transform hover:-translate-y-0.5 active:translate-y-0">
+          <Link href="/contact" className="block w-full max-w-[20rem] sm:inline-block sm:w-auto sm:max-w-full">
+            <button className="w-full sm:w-auto bg-white/10 backdrop-blur-sm border border-white/20 text-white px-5 md:px-8 py-4 text-xs md:text-sm tracking-[0.1em] md:tracking-widest uppercase font-medium hover:bg-white/20 transition-all transform hover:-translate-y-0.5 active:translate-y-0 whitespace-normal text-center leading-relaxed">
               Request a Confidential Conversation &rarr;
             </button>
           </Link>
@@ -60,7 +60,7 @@ export default function Hero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 0.8 }}
-          className="mt-16 md:mt-24 flex items-start space-x-6 border-t border-white/15 pt-8 max-w-xl"
+          className="mt-16 md:mt-24 flex items-start space-x-6 border-t border-white/15 pt-8 w-full max-w-[calc(100vw-3rem)] md:max-w-xl"
         >
           <div className="font-serif text-4xl text-gold shrink-0 italic pr-2 border-r border-white/15">
             3<span className="text-3xl ml-0.5">T</span>
