@@ -15,8 +15,34 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: "3Ts Consulting",
-  description: "Senior Advisory for Complex Leadership Moments",
+  title: "3Ts Consulting — Senior Advisory for Complex Leadership Moments",
+  description:
+    "3Ts works with sponsors and senior leaders of transformations, reforms, and consequential leadership transitions across governments, multilaterals, and private-sector organizations.",
+  metadataBase: new URL("https://3ts-inc-proposed.pages.dev"),
+  openGraph: {
+    title: "3Ts Consulting — Senior Advisory for Complex Leadership Moments",
+    description:
+      "Private advisory for governments, multilaterals, sovereign-backed institutions, family enterprises, and large private-sector organizations.",
+    url: "https://3ts-inc-proposed.pages.dev",
+    siteName: "3Ts Consulting",
+    images: [
+      {
+        url: "/icon.png",
+        width: 512,
+        height: 512,
+        alt: "3Ts Consulting",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary",
+    title: "3Ts Consulting — Senior Advisory for Complex Leadership Moments",
+    description:
+      "Private advisory for governments, multilaterals, sovereign-backed institutions, family enterprises, and large private-sector organizations.",
+    images: ["/icon.png"],
+  },
 };
 
 export default function RootLayout({

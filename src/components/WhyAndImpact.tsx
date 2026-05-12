@@ -97,7 +97,7 @@ export default function WhyAndImpact() {
               transition={{ duration: 0.8 }}
               className="font-serif text-4xl md:text-5xl leading-tight tracking-tight text-cream"
             >
-              Outcomes that matter. Evidence that endures.
+              Real progress you can actually measure.
             </motion.h2>
           </div>
 
