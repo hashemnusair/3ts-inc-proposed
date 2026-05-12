@@ -7,14 +7,24 @@ import Link from "next/link";
 export default function Hero() {
   return (
     <section className="relative w-full min-h-[calc(100vh-96px)] flex flex-col overflow-hidden">
-      {/* Full Background Image */}
+      {/* Full Background Image — responsive */}
       <div className="absolute inset-0 z-0">
+        {/* Mobile portrait image */}
+        <Image
+          src="/3TsHeroBGmobile.png"
+          alt="Executive boardroom"
+          fill
+          priority
+          className="object-cover md:hidden"
+          sizes="100vw"
+        />
+        {/* Desktop wide image */}
         <Image
           src="/3TsHeroBG.png"
           alt="Executive boardroom"
           fill
           priority
-          className="object-cover"
+          className="object-cover hidden md:block"
           sizes="100vw"
         />
         {/* Dark overlay for text readability */}
