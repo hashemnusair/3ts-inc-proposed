@@ -15,7 +15,7 @@ const links = [
   { href: "/contact", label: "Contact" },
 ];
 
-const menuVariants = {
+const menuVariants: any = {
   closed: {
     opacity: 0,
     y: "-100%",
@@ -34,7 +34,7 @@ const menuVariants = {
   },
 };
 
-const linkContainerVariants = {
+const linkContainerVariants: any = {
   closed: {
     transition: {
       staggerChildren: 0.05,
@@ -49,7 +49,7 @@ const linkContainerVariants = {
   },
 };
 
-const linkVariants = {
+const linkVariants: any = {
   closed: { opacity: 0, y: 20 },
   open: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
 };
