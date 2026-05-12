@@ -173,8 +173,8 @@ export default function Navbar() {
         </motion.div>
       </header>
 
-      {/* Spacer to replace sticky flow */}
-      <div className="w-full h-[96px] shrink-0"></div>
+      {/* Spacer to replace sticky flow — hidden on homepage where hero bleeds behind navbar */}
+      {!isHome && <div className="w-full h-[96px] shrink-0"></div>}
 
       {/* Fullscreen Mobile Menu Overlay */}
       <AnimatePresence>
