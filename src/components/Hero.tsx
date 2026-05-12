@@ -40,7 +40,7 @@ export default function Hero() {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="max-w-3xl"
         >
-          <div className="flex flex-col items-start mb-10 md:mb-12">
+          <div className="hidden md:flex flex-col items-start mb-10 md:mb-12">
             <span className="text-gold text-xs font-semibold tracking-[0.25em] uppercase mb-4">
               Senior Advisory For Complex Leadership Moments
             </span>
@@ -52,7 +52,7 @@ export default function Hero() {
           </h1>
 
           <p className="text-white/70 text-base md:text-lg max-w-lg leading-relaxed mb-10 md:mb-12">
-            Helping leadership teams navigate complexity and move forward with clarity.
+            Grounded in neuroscience, governance, and 20 years of global experience — helping leadership teams navigate complexity and move forward with clarity.
           </p>
 
           <Link href="/contact">

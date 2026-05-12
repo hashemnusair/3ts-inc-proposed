@@ -25,11 +25,11 @@ const itemVariants: any = {
 };
 
 const clients = [
-  { icon: Bank, text: "Governments" },
-  { icon: Globe, text: "Multilaterals" },
+  { icon: Bank, text: "Governments & Multilaterals" },
   { icon: Shield, text: "Sovereign-backed institutions" },
   { icon: Users, text: "Family enterprises" },
   { icon: Buildings, text: "Large private-sector organizations" },
+  { icon: Globe, text: "Non-Profit & Public-Sector Organizations" },
 ];
 
 export default function WhoWeWorkWith() {
@@ -69,8 +69,7 @@ export default function WhoWeWorkWith() {
             <br />
             <br />
             <span className="font-medium text-charcoal">
-              Most engagements begin where standard consulting and facilitation
-              have already been tried.
+              There is no &ldquo;one size fits all.&rdquo; Every engagement is tailored to meet your specific needs, challenges, and goals.
             </span>
           </motion.p>
         </div>

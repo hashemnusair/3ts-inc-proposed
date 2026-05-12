@@ -33,6 +33,21 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
+
+      {/* Shareef's Quote */}
+      <section className="w-full bg-[#111613] py-24 px-6 md:px-16 lg:px-24">
+        <div className="max-w-3xl mx-auto text-center">
+          <div className="font-serif text-5xl text-gold/40 mb-6">&ldquo;</div>
+          <blockquote className="font-serif text-2xl md:text-3xl lg:text-4xl text-cream leading-snug tracking-tight mb-8">
+            I hope that together we can contribute to a world where collaboration, cooperation, and kindness thrive.
+          </blockquote>
+          <div className="w-12 h-[2px] bg-gold/60 mx-auto mb-6"></div>
+          <p className="text-gold text-sm tracking-[0.2em] uppercase font-semibold">
+            Shareef Samir Khatib
+          </p>
+        </div>
+      </section>
+
       <Footer />
     </main>
   );
