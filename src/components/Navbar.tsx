@@ -80,7 +80,7 @@ export default function Navbar() {
 
   return (
     <>
-      <header className="w-full bg-cream sticky top-0 z-[60] border-b border-charcoal/5">
+      <header className="w-full bg-cream fixed top-0 left-0 right-0 z-[60] border-b border-charcoal/5">
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -151,6 +151,9 @@ export default function Navbar() {
           </button>
         </motion.div>
       </header>
+
+      {/* Spacer to replace sticky flow */}
+      <div className="w-full h-[96px] shrink-0"></div>
 
       {/* Fullscreen Mobile Menu Overlay */}
       <AnimatePresence>
