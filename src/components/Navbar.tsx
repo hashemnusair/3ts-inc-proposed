@@ -94,7 +94,7 @@ export default function Navbar() {
     <>
       <header
         className={`w-full fixed top-0 left-0 right-0 z-[60] transition-all duration-500 ${
-          scrolled || !isHome
+          scrolled || !isHome || isOpen
             ? "bg-cream/95 backdrop-blur-md border-b border-charcoal/5"
             : "bg-transparent border-b border-transparent"
         }`}
@@ -107,7 +107,7 @@ export default function Navbar() {
         >
           <div className="flex items-center space-x-6">
             <Link href="/" className="flex flex-col z-[70]">
-              <span className={`font-serif text-2xl md:text-3xl tracking-tight transition-colors duration-500 ${isHome && !scrolled ? 'text-white' : 'text-charcoal'}`}>
+              <span className={`font-serif text-2xl md:text-3xl tracking-tight transition-colors duration-500 ${isHome && !scrolled && !isOpen ? 'text-white' : 'text-charcoal'}`}>
                 3Ts Consulting
               </span>
               <span className="font-sans text-[10px] md:text-xs tracking-widest text-gold mt-1 uppercase">

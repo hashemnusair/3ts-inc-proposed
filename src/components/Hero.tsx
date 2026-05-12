@@ -40,9 +40,9 @@ export default function Hero() {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="max-w-3xl"
         >
-          <div className="flex flex-col items-start space-y-4 mb-10 md:mb-12">
-            <span className="text-gold text-xs font-semibold tracking-[0.25em] uppercase">
-              Thoroughly. Thought. Through.
+          <div className="flex flex-col items-start mb-10 md:mb-12">
+            <span className="text-gold text-xs font-semibold tracking-[0.25em] uppercase mb-4">
+              Senior Advisory For Complex Leadership Moments
             </span>
             <div className="w-12 h-[2px] bg-gold/60"></div>
           </div>
