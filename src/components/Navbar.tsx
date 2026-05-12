@@ -12,6 +12,7 @@ const links = [
   { href: "/services", label: "Services" },
   { href: "/impact", label: "Impact" },
   { href: "/leadership", label: "Leadership" },
+  { href: "/testimonials", label: "Testimonials" },
   { href: "/contact", label: "Contact" },
 ];
 
@@ -119,7 +120,7 @@ export default function Navbar() {
 
           {/* Desktop Links */}
           <nav className={`hidden md:flex items-center space-x-8 text-sm font-medium tracking-widest uppercase transition-colors duration-500 ${isHome && !scrolled ? 'text-white/80' : 'text-charcoal/80'}`}>
-            {links.slice(0, 5).map((link) => (
+            {links.slice(0, 6).map((link) => (
               <Link key={link.href} href={link.href} className="hover:text-gold transition-colors">
                 {link.label}
               </Link>
