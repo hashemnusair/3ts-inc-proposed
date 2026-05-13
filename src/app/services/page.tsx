@@ -44,6 +44,7 @@ export default function ServicesPage() {
             <div className="absolute inset-0 bg-gradient-to-r from-charcoal/15 via-transparent to-charcoal/20" />
             <div className="absolute inset-0 border border-white/10 pointer-events-none" />
           </div>
+
           <div className="border-t border-charcoal/10 pt-8">
             <p className="text-gold text-xs font-semibold tracking-[0.2em] uppercase mb-5">
               Designed, not improvised
@@ -57,6 +58,26 @@ export default function ServicesPage() {
               the sponsor through a longer transformation. The constant is
               careful preparation, confidential judgment, and follow-through.
             </p>
+          </div>
+        </div>
+
+        <div className="mx-auto mt-14 max-w-7xl border-y border-charcoal/10 py-5">
+          <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+            <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-gold">
+              How a conversation becomes movement
+            </p>
+            <ol className="grid grid-cols-5 gap-px overflow-hidden border border-charcoal/10 bg-charcoal/10 text-center">
+              {["Listen", "Map", "Design", "Convene", "Follow through"].map(
+                (step) => (
+                  <li
+                    key={step}
+                    className="bg-cream px-3 py-3 text-[10px] font-medium uppercase tracking-[0.13em] text-charcoal/58 md:min-w-32"
+                  >
+                    {step}
+                  </li>
+                )
+              )}
+            </ol>
           </div>
         </div>
       </section>
@@ -73,6 +94,9 @@ export default function ServicesPage() {
             />
             <div className="absolute inset-0 bg-gradient-to-t from-[#111613]/45 via-transparent to-transparent" />
             <div className="absolute inset-0 border border-cream/10 pointer-events-none" />
+            <div className="absolute bottom-5 left-5 border-l border-gold/50 pl-4 text-[9px] font-medium uppercase tracking-[0.18em] text-cream/45">
+              Field note: facilitated working session
+            </div>
           </div>
 
           <div className="max-w-2xl">

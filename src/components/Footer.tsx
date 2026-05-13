@@ -31,6 +31,9 @@ export default function Footer() {
           <div className="text-gold text-xs tracking-[0.2em] uppercase mb-6">
             Thoroughly. Thought. Through.
           </div>
+          <div className="max-w-xs text-cream/28 text-[10px] leading-relaxed tracking-[0.16em] uppercase mb-6">
+            Advisory, facilitation, and coaching for consequential rooms.
+          </div>
           <div className="text-cream/40 text-xs tracking-widest uppercase">
             &copy; {new Date().getFullYear()} 3Ts Consulting, Inc.
           </div>
