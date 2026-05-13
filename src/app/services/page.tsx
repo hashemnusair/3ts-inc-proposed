@@ -61,6 +61,41 @@ export default function ServicesPage() {
         </div>
       </section>
 
+      <section className="w-full bg-[#111613] px-6 py-20 md:px-16 lg:px-24">
+        <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[0.72fr_1fr] lg:items-center">
+          <div className="relative h-[440px] overflow-hidden bg-charcoal shadow-[0_24px_70px_-30px_rgba(0,0,0,0.5)] md:h-[560px]">
+            <Image
+              src="/shareef-presenting.webp"
+              alt="Shareef Khatib facilitating a working session"
+              fill
+              className="object-cover object-[center_35%] grayscale-[35%] contrast-105 brightness-90"
+              sizes="(min-width: 1024px) 38vw, 100vw"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#111613]/45 via-transparent to-transparent" />
+            <div className="absolute inset-0 border border-cream/10 pointer-events-none" />
+          </div>
+
+          <div className="max-w-2xl">
+            <div className="mb-8 flex flex-col items-start space-y-4">
+              <span className="text-xs font-semibold uppercase tracking-[0.2em] text-gold">
+                In the room
+              </span>
+              <div className="h-[2px] w-12 bg-gold/60"></div>
+            </div>
+            <p className="mb-8 font-serif text-3xl leading-snug text-cream md:text-5xl">
+              The service is not only the framework. It is the judgment inside
+              the room.
+            </p>
+            <p className="text-base leading-relaxed text-cream/68 md:text-lg">
+              Shareef designs the intervention, prepares the stakeholders, and
+              then holds the conversation with enough structure for movement and
+              enough care for candor. That combination is what turns a meeting
+              into a consequential working session.
+            </p>
+          </div>
+        </div>
+      </section>
+
       <WhatWeDo />
       <Footer />
     </main>
