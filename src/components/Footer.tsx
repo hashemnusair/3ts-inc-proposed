@@ -18,7 +18,7 @@ export default function Footer() {
           </h2>
           <a
             href="mailto:shareef@3ts-inc.com"
-            className="text-gold/80 hover:text-gold transition-colors font-sans tracking-widest uppercase text-sm border-b border-gold/30 hover:border-gold pb-1 inline-block mt-4"
+            className="premium-track text-gold/80 hover:text-gold transition-colors font-sans tracking-widest uppercase text-sm inline-block mt-4"
           >
             shareef@3ts-inc.com
           </a>

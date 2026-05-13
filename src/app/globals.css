@@ -59,3 +59,34 @@ a {
   background-color: var(--color-gold);
   color: #fff;
 }
+
+@media (hover: hover) and (pointer: fine) {
+  .premium-track {
+    position: relative;
+    display: inline-block;
+  }
+
+  .premium-track::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -0.35rem;
+    width: 100%;
+    height: 1px;
+    background: var(--color-gold);
+    opacity: 0;
+    transform: scaleX(0);
+    transform-origin: left center;
+    transition:
+      transform 420ms cubic-bezier(0.22, 1, 0.36, 1),
+      opacity 420ms ease;
+    pointer-events: none;
+  }
+
+  .premium-track:hover::after,
+  .premium-track:focus-visible::after,
+  .premium-track[data-active="true"]::after {
+    opacity: 0.78;
+    transform: scaleX(1);
+  }
+}

@@ -1,9 +1,8 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useLayoutEffect } from "react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
-import { List, X } from "@phosphor-icons/react";
 import { usePathname } from "next/navigation";
 
 const links = [
@@ -54,13 +53,29 @@ const linkVariants: any = {
   open: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
 };
 
+let hasPlayedNavIntro = false;
+
+const useIsomorphicLayoutEffect =
+  typeof window === "undefined" ? useEffect : useLayoutEffect;
+
+function isPastHeroTop() {
+  return typeof window !== "undefined" ? window.scrollY > 4 : false;
+}
+
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const [isMenuNavigating, setIsMenuNavigating] = useState(false);
+  const [shouldAnimateIntro] = useState(() => !hasPlayedNavIntro);
   const pathname = usePathname();
+
+  useEffect(() => {
+    hasPlayedNavIntro = true;
+  }, []);
 
   // Close menu on route change
   useEffect(() => {
     setIsOpen(false);
+    setIsMenuNavigating(false);
   }, [pathname]);
 
   // Prevent scrolling when menu is open
@@ -78,60 +93,86 @@ export default function Navbar() {
     };
   }, [isOpen]);
 
-  const [scrolled, setScrolled] = useState(false);
+  const [scrolled, setScrolled] = useState(isPastHeroTop);
 
-  useEffect(() => {
+  useIsomorphicLayoutEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 80);
+      setScrolled(isPastHeroTop());
     };
+    handleScroll();
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const isHome = pathname === "/";
+  const navIsTransparent = isHome && !scrolled && !isOpen && !isMenuNavigating;
+  const navToneClass = navIsTransparent ? "text-white/80" : "text-charcoal/80";
+  const brandToneClass = navIsTransparent ? "text-white" : "text-charcoal";
+  const dividerToneClass = navIsTransparent ? "bg-white/20" : "bg-charcoal/20";
+
+  const handleMobileNavClick = () => {
+    setIsMenuNavigating(true);
+    setIsOpen(false);
+  };
 
   return (
     <>
       <header
-        className={`w-full fixed top-0 left-0 right-0 z-[60] transition-all duration-500 ${
-          scrolled || !isHome || isOpen
-            ? "bg-cream/95 backdrop-blur-md border-b border-charcoal/5"
-            : "bg-transparent border-b border-transparent"
+        className={`w-full fixed top-0 left-0 right-0 z-[60] transition-colors duration-200 ${
+          navIsTransparent
+            ? "bg-transparent border-b border-transparent"
+            : "bg-cream/95 backdrop-blur-md border-b border-charcoal/5"
         }`}
       >
         <motion.div
-          initial={{ opacity: 0, y: -20 }}
+          initial={shouldAnimateIntro ? { opacity: 0, y: -20 } : false}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="w-full px-6 md:px-12 py-6 flex items-center justify-between"
         >
           <div className="flex items-center space-x-6">
             <Link href="/" className="flex flex-col z-[70]">
-              <span className={`font-serif text-2xl md:text-3xl tracking-tight transition-colors duration-500 ${isHome && !scrolled && !isOpen ? 'text-white' : 'text-charcoal'}`}>
+              <span className={`font-serif text-2xl md:text-3xl tracking-tight ${brandToneClass}`}>
                 3Ts Consulting
               </span>
               <span className="font-sans text-[10px] md:text-xs tracking-widest text-gold mt-1 uppercase">
                 Thoroughly. Thought. Through.
               </span>
             </Link>
-            <div className={`hidden md:block w-px h-10 transition-colors duration-500 ${isHome && !scrolled ? 'bg-white/20' : 'bg-charcoal/20'}`}></div>
+            <div className={`hidden md:block w-px h-10 ${dividerToneClass}`}></div>
           </div>
 
           {/* Desktop Links */}
-          <nav className={`hidden md:flex items-center space-x-8 text-sm font-medium tracking-widest uppercase transition-colors duration-500 ${isHome && !scrolled ? 'text-white/80' : 'text-charcoal/80'}`}>
-            {links.slice(0, 5).map((link) => (
-              <Link key={link.href} href={link.href} className="hover:text-gold transition-colors">
-                {link.label}
-              </Link>
-            ))}
+          <nav className={`hidden md:flex items-center space-x-8 text-sm font-medium tracking-widest uppercase ${navToneClass}`}>
+            {links.slice(0, 5).map((link) => {
+              const isActive = pathname === link.href;
+
+              return (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  aria-current={isActive ? "page" : undefined}
+                  data-active={isActive ? "true" : undefined}
+                  className={`premium-track ${isActive ? "text-gold" : "hover:text-gold"}`}
+                >
+                  {link.label}
+                </Link>
+              );
+            })}
           </nav>
 
           {/* Desktop Contact */}
           <div className="hidden md:flex items-center space-x-6">
-            <div className={`w-px h-10 transition-colors duration-500 ${isHome && !scrolled ? 'bg-white/20' : 'bg-charcoal/20'}`}></div>
+            <div className={`w-px h-10 ${dividerToneClass}`}></div>
             <Link
               href="/contact"
-              className={`text-sm font-medium tracking-widest uppercase hover:text-gold transition-colors duration-500 ${isHome && !scrolled ? 'text-white/80' : 'text-charcoal/80'}`}
+              aria-current={pathname === "/contact" ? "page" : undefined}
+              data-active={pathname === "/contact" ? "true" : undefined}
+              className={`premium-track text-sm font-medium tracking-widest uppercase ${
+                pathname === "/contact"
+                  ? "text-gold"
+                  : `hover:text-gold ${navToneClass}`
+              }`}
             >
               Contact
             </Link>
@@ -139,8 +180,11 @@ export default function Navbar() {
 
           {/* Mobile Hamburger Toggle */}
           <button
-            className={`md:hidden flex items-center justify-center p-2 -mr-2 z-[70] hover:text-gold transition-colors duration-500 focus:outline-none group ${isHome && !scrolled && !isOpen ? 'text-white' : 'text-charcoal'}`}
-            onClick={() => setIsOpen(!isOpen)}
+            className={`md:hidden flex items-center justify-center p-2 -mr-2 z-[70] hover:text-gold focus:outline-none group ${brandToneClass}`}
+            onClick={() => {
+              setIsMenuNavigating(false);
+              setIsOpen((current) => !current);
+            }}
             aria-expanded={isOpen}
             aria-label={isOpen ? "Close menu" : "Open menu"}
           >
@@ -183,21 +227,20 @@ export default function Navbar() {
             variants={menuVariants}
             initial="closed"
             animate="open"
-            exit="closed"
+            exit={{ opacity: 0, transition: { duration: 0.12, ease: "linear" } }}
             className="fixed inset-0 h-[100dvh] bg-cream z-40 flex flex-col justify-center px-8 md:hidden overflow-hidden touch-none overscroll-none"
           >
             <motion.nav
               variants={linkContainerVariants}
               initial="closed"
               animate="open"
-              exit="closed"
               className="flex flex-col items-start space-y-8"
             >
               {links.map((link) => (
                 <motion.div key={link.href} variants={linkVariants}>
                   <Link
                     href={link.href}
-                    onClick={() => setIsOpen(false)}
+                    onClick={handleMobileNavClick}
                     className="font-serif text-4xl text-charcoal hover:text-gold transition-colors inline-block relative group"
                   >
                     {link.label}
@@ -211,7 +254,6 @@ export default function Navbar() {
               variants={linkVariants}
               initial="closed"
               animate="open"
-              exit="closed"
               className="absolute bottom-12 left-8 border-t border-charcoal/10 pt-8 w-[calc(100%-4rem)]"
             >
               <a

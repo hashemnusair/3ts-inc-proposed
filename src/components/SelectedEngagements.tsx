@@ -10,18 +10,33 @@ const cases = [
     title: "Saudi Arabia —\nVision 2030 Assessment",
     description:
       "Supporting the World Bank GCC Prosperity team in the assessment of Saudi Arabia's Vision 2030 progress and next steps.\nOngoing.",
+    details: [
+      ["Context", "World Bank GCC Prosperity team"],
+      ["Mode", "Assessment facilitation and next-step design"],
+      ["Status", "Current engagement"],
+    ],
   },
   {
     number: "02",
     title: "Malaysia —\nNational Governance Reform",
     description:
       "Directed a $27M governance portfolio engaging Parliament, ministries, anti-corruption bodies, and civil society on reform priorities. $17M in cumulative impact to 80+ local actors within 18 months.",
+    details: [
+      ["Role", "Chief of Party"],
+      ["Table", "Parliament, ministries, anti-corruption bodies, civil society"],
+      ["Scale", "$27M portfolio; 80+ local grantees"],
+    ],
   },
   {
     number: "03",
     title: "World Bank —\nLeadership Development at Scale",
     description:
       "Delivered leadership training across 18 cohorts of World Bank Team Leaders and Supervisors. Cohorts recorded a 16% improvement in measured leadership scores.",
+    details: [
+      ["Audience", "Team Leaders and Supervisors"],
+      ["Scale", "18 cohorts"],
+      ["Signal", "16% improvement in leadership scores"],
+    ],
   },
 ];
 
@@ -116,8 +131,10 @@ export default function SelectedEngagements() {
               key={index}
               variants={cardVariants}
               whileHover={{ y: -5 }}
-              className="bg-[#fcfbf9] border border-charcoal/5 p-10 flex flex-col shadow-[0_10px_40px_-15px_rgba(0,0,0,0.03)] hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.06)] transition-all duration-300"
+              className="group relative overflow-hidden bg-[#fcfbf9] border border-charcoal/5 p-8 lg:p-10 flex flex-col shadow-[0_10px_40px_-15px_rgba(0,0,0,0.03)] hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.06)] transition-all duration-500"
             >
+              <div className="absolute inset-x-0 top-0 h-px bg-gold/0 transition-colors duration-500 md:group-hover:bg-gold/60"></div>
+              <div className="absolute -right-24 -top-24 h-48 w-48 rounded-full border border-gold/0 transition-all duration-700 md:group-hover:-right-16 md:group-hover:-top-16 md:group-hover:border-gold/15"></div>
               <div className="flex flex-col items-start mb-6">
                 <span className="text-gold text-sm font-semibold tracking-[0.2em] mb-2">
                   {item.number}
@@ -131,6 +148,26 @@ export default function SelectedEngagements() {
               <p className="text-charcoal/70 text-sm leading-relaxed whitespace-pre-line">
                 {item.description}
               </p>
+              <div className="mt-8 border-t border-charcoal/10 pt-5 transition-all duration-500 md:translate-y-2 md:opacity-55 md:group-hover:translate-y-0 md:group-hover:opacity-100">
+                <div className="mb-4 text-[10px] font-semibold uppercase tracking-[0.2em] text-gold/80">
+                  Public-safe detail
+                </div>
+                <dl className="space-y-3">
+                  {item.details.map(([label, value]) => (
+                    <div
+                      key={label}
+                      className="grid grid-cols-[72px_1fr] gap-4 border-b border-charcoal/[0.06] pb-3 last:border-b-0 last:pb-0"
+                    >
+                      <dt className="text-[10px] font-semibold uppercase tracking-[0.16em] text-charcoal/35">
+                        {label}
+                      </dt>
+                      <dd className="text-xs leading-relaxed text-charcoal/65">
+                        {value}
+                      </dd>
+                    </div>
+                  ))}
+                </dl>
+              </div>
             </motion.div>
           ))}
         </motion.div>
