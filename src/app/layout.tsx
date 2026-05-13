@@ -51,7 +51,18 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${outfit.variable} ${playfair.variable}`}>
+    <html
+      lang="en"
+      className={`${outfit.variable} ${playfair.variable}`}
+      suppressHydrationWarning
+    >
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `!function(){var e="3ts-scroll:"+location.pathname;function t(){try{sessionStorage.setItem(e,String(window.scrollY||0))}catch(e){}}function n(){var t=0;try{t=Number(sessionStorage.getItem(e)||0)}catch(e){}document.documentElement.dataset.navAtTop=Math.max(window.scrollY||0,t)>4?"false":"true"}n(),window.addEventListener("scroll",function(){t(),n()},{passive:!0}),window.addEventListener("pagehide",t),window.addEventListener("pageshow",function(){setTimeout(function(){t(),n()},0)})}();`,
+          }}
+        />
+      </head>
       <body className="flex flex-col font-sans bg-cream text-charcoal selection:bg-gold selection:text-cream overflow-x-hidden w-full relative antialiased">
         {children}
       </body>

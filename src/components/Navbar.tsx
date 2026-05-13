@@ -99,7 +99,9 @@ export default function Navbar() {
 
   useIsomorphicLayoutEffect(() => {
     const handleScroll = () => {
-      setScrolled(isPastHeroTop());
+      const isScrolled = isPastHeroTop();
+      document.documentElement.dataset.navAtTop = isScrolled ? "false" : "true";
+      setScrolled(isScrolled);
     };
     handleScroll();
     const frame = window.requestAnimationFrame(handleScroll);
@@ -133,7 +135,10 @@ export default function Navbar() {
   return (
     <>
       <header
-        className={`w-full fixed top-0 left-0 right-0 z-[60] transition-all duration-500 ${
+        data-home={isHome ? "true" : "false"}
+        data-menu-open={isOpen ? "true" : "false"}
+        data-menu-navigating={isMenuNavigating ? "true" : "false"}
+        className={`site-nav w-full fixed top-0 left-0 right-0 z-[60] transition-all duration-500 ${
           navIsTransparent
             ? "bg-transparent border-b border-transparent"
             : "bg-cream/95 backdrop-blur-md border-b border-charcoal/5"
@@ -147,18 +152,18 @@ export default function Navbar() {
         >
           <div className="flex items-center space-x-6">
             <Link href="/" className="flex flex-col z-[70]">
-              <span className={`font-serif text-2xl md:text-3xl tracking-tight ${brandToneClass}`}>
+              <span className={`site-nav-brand font-serif text-2xl md:text-3xl tracking-tight ${brandToneClass}`}>
                 3Ts Consulting
               </span>
               <span className="font-sans text-[10px] md:text-xs tracking-widest text-gold mt-1 uppercase">
                 Thoroughly. Thought. Through.
               </span>
             </Link>
-            <div className={`hidden md:block w-px h-10 ${dividerToneClass}`}></div>
+            <div className={`site-nav-divider hidden md:block w-px h-10 ${dividerToneClass}`}></div>
           </div>
 
           {/* Desktop Links */}
-          <nav className={`hidden md:flex items-center space-x-8 text-sm font-medium tracking-widest uppercase ${navToneClass}`}>
+          <nav className={`site-nav-tone hidden md:flex items-center space-x-8 text-sm font-medium tracking-widest uppercase ${navToneClass}`}>
             {links.slice(0, 5).map((link) => {
               const isActive = pathname === link.href;
 
@@ -178,7 +183,7 @@ export default function Navbar() {
 
           {/* Desktop Contact */}
           <div className="hidden md:flex items-center space-x-6">
-            <div className={`w-px h-10 ${dividerToneClass}`}></div>
+            <div className={`site-nav-divider w-px h-10 ${dividerToneClass}`}></div>
             <Link
               href="/contact"
               aria-current={pathname === "/contact" ? "page" : undefined}
@@ -195,7 +200,7 @@ export default function Navbar() {
 
           {/* Mobile Hamburger Toggle */}
           <button
-            className={`md:hidden flex items-center justify-center p-2 -mr-2 z-[70] hover:text-gold focus:outline-none group ${brandToneClass}`}
+            className={`site-nav-brand md:hidden flex items-center justify-center p-2 -mr-2 z-[70] hover:text-gold focus:outline-none group ${brandToneClass}`}
             onClick={() => {
               setIsMenuNavigating(false);
               setIsOpen((current) => !current);

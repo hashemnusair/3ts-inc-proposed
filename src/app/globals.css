@@ -60,6 +60,25 @@ a {
   color: #fff;
 }
 
+html[data-nav-at-top="true"] .site-nav[data-home="true"][data-menu-open="false"][data-menu-navigating="false"] {
+  background-color: transparent !important;
+  border-color: transparent !important;
+  -webkit-backdrop-filter: none !important;
+  backdrop-filter: none !important;
+}
+
+html[data-nav-at-top="true"] .site-nav[data-home="true"][data-menu-open="false"][data-menu-navigating="false"] .site-nav-brand {
+  color: #fff !important;
+}
+
+html[data-nav-at-top="true"] .site-nav[data-home="true"][data-menu-open="false"][data-menu-navigating="false"] .site-nav-tone {
+  color: rgb(255 255 255 / 0.8) !important;
+}
+
+html[data-nav-at-top="true"] .site-nav[data-home="true"][data-menu-open="false"][data-menu-navigating="false"] .site-nav-divider {
+  background-color: rgb(255 255 255 / 0.2) !important;
+}
+
 @media (hover: hover) and (pointer: fine) {
   .premium-track {
     position: relative;
