@@ -1,9 +1,10 @@
 "use client";
 
 import { useState, useEffect, useLayoutEffect } from "react";
+import type { MouseEvent } from "react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 
 const links = [
   { href: "/about", label: "About" },
@@ -66,6 +67,7 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [isMenuNavigating, setIsMenuNavigating] = useState(false);
   const [shouldAnimateIntro] = useState(() => !hasPlayedNavIntro);
+  const router = useRouter();
   const pathname = usePathname();
 
   useEffect(() => {
@@ -93,15 +95,21 @@ export default function Navbar() {
     };
   }, [isOpen]);
 
-  const [scrolled, setScrolled] = useState(isPastHeroTop);
+  const [scrolled, setScrolled] = useState(true);
 
   useIsomorphicLayoutEffect(() => {
     const handleScroll = () => {
       setScrolled(isPastHeroTop());
     };
     handleScroll();
+    const frame = window.requestAnimationFrame(handleScroll);
+    const restorationCheck = window.setTimeout(handleScroll, 120);
     window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
+    return () => {
+      window.cancelAnimationFrame(frame);
+      window.clearTimeout(restorationCheck);
+      window.removeEventListener("scroll", handleScroll);
+    };
   }, []);
 
   const isHome = pathname === "/";
@@ -110,15 +118,22 @@ export default function Navbar() {
   const brandToneClass = navIsTransparent ? "text-white" : "text-charcoal";
   const dividerToneClass = navIsTransparent ? "bg-white/20" : "bg-charcoal/20";
 
-  const handleMobileNavClick = () => {
+  const handleMobileNavClick = (event: MouseEvent<HTMLAnchorElement>, href: string) => {
+    if (href === pathname) {
+      setIsOpen(false);
+      setIsMenuNavigating(false);
+      return;
+    }
+
+    event.preventDefault();
     setIsMenuNavigating(true);
-    setIsOpen(false);
+    router.push(href);
   };
 
   return (
     <>
       <header
-        className={`w-full fixed top-0 left-0 right-0 z-[60] transition-colors duration-200 ${
+        className={`w-full fixed top-0 left-0 right-0 z-[60] transition-all duration-500 ${
           navIsTransparent
             ? "bg-transparent border-b border-transparent"
             : "bg-cream/95 backdrop-blur-md border-b border-charcoal/5"
@@ -227,7 +242,7 @@ export default function Navbar() {
             variants={menuVariants}
             initial="closed"
             animate="open"
-            exit={{ opacity: 0, transition: { duration: 0.12, ease: "linear" } }}
+            exit="closed"
             className="fixed inset-0 h-[100dvh] bg-cream z-40 flex flex-col justify-center px-8 md:hidden overflow-hidden touch-none overscroll-none"
           >
             <motion.nav
@@ -240,7 +255,7 @@ export default function Navbar() {
                 <motion.div key={link.href} variants={linkVariants}>
                   <Link
                     href={link.href}
-                    onClick={handleMobileNavClick}
+                    onClick={(event) => handleMobileNavClick(event, link.href)}
                     className="font-serif text-4xl text-charcoal hover:text-gold transition-colors inline-block relative group"
                   >
                     {link.label}
