@@ -33,8 +33,8 @@ export default function AboutPage() {
   return (
     <main className="flex min-h-screen flex-col bg-cream text-charcoal">
       <Navbar />
-      <section className="w-full py-28 md:py-32 px-6 md:px-16 lg:px-24">
-        <div className="max-w-7xl mx-auto grid lg:grid-cols-[minmax(0,1.05fr)_minmax(360px,0.75fr)] gap-16 lg:gap-20 items-start">
+      <section className="site-gutter site-page-hero w-full">
+        <div className="site-container grid lg:grid-cols-[minmax(0,1.05fr)_minmax(360px,0.75fr)] gap-12 lg:gap-16 items-start">
           <div>
             <div className="flex flex-col items-start space-y-4 mb-8">
               <span className="text-gold text-xs font-semibold tracking-[0.2em] uppercase">
@@ -42,10 +42,10 @@ export default function AboutPage() {
               </span>
               <div className="w-12 h-[2px] bg-gold/60"></div>
             </div>
-            <h1 className="w-full max-w-[20rem] md:max-w-none font-serif text-4xl md:text-6xl lg:text-7xl leading-tight tracking-tight text-charcoal mb-10">
+            <h1 className="site-heading-xl w-full max-w-[20rem] md:max-w-none font-serif tracking-tight text-charcoal mb-8 min-[900px]:mb-10">
               Shareef Samir Khatib
             </h1>
-            <h2 className="w-full max-w-[20rem] md:max-w-none text-xl md:text-2xl font-serif text-charcoal/80 mb-12 italic leading-relaxed">
+            <h2 className="w-full max-w-[20rem] md:max-w-none text-xl md:text-2xl font-serif text-charcoal/80 mb-10 italic leading-relaxed">
               Senior Facilitator | Organizational Development Practitioner | Executive Coach
             </h2>
             <div className="w-full max-w-[20rem] md:max-w-none prose prose-lg prose-headings:font-serif prose-headings:text-charcoal prose-p:text-charcoal/70 prose-strong:text-charcoal">
@@ -68,7 +68,7 @@ export default function AboutPage() {
           </div>
 
           <aside className="lg:sticky lg:top-32">
-            <div className="relative h-[480px] md:h-[560px] bg-charcoal overflow-hidden shadow-[0_24px_70px_-28px_rgba(0,0,0,0.24)]">
+            <div className="relative h-[clamp(28rem,48vw,35rem)] bg-charcoal overflow-hidden shadow-[0_24px_70px_-28px_rgba(0,0,0,0.24)]">
               <Image
                 src="/shareef-khatib.webp"
                 alt="Shareef Samir Khatib"
@@ -100,8 +100,8 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="w-full bg-[#f8f6f2] py-24 px-6 md:px-16 lg:px-24 border-y border-[#edebe4]">
-        <div className="max-w-7xl mx-auto grid lg:grid-cols-[0.7fr_1fr] gap-16">
+      <section className="site-gutter site-section w-full bg-[#f8f6f2] border-y border-[#edebe4]">
+        <div className="site-container grid lg:grid-cols-[0.7fr_1fr] gap-12 lg:gap-16">
           <div>
             <div className="flex flex-col items-start space-y-4 mb-8">
               <span className="text-gold text-xs font-semibold tracking-[0.2em] uppercase">
@@ -109,7 +109,7 @@ export default function AboutPage() {
               </span>
               <div className="w-12 h-[2px] bg-gold/60"></div>
             </div>
-            <h2 className="font-serif text-4xl md:text-5xl leading-tight tracking-tight text-charcoal">
+            <h2 className="site-heading-md font-serif tracking-tight text-charcoal">
               A practice built on accountability and trust.
             </h2>
           </div>
@@ -137,8 +137,8 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="w-full py-24 px-6 md:px-16 lg:px-24">
-        <div className="max-w-7xl mx-auto grid lg:grid-cols-[0.75fr_1fr] gap-16">
+      <section className="site-gutter site-section w-full">
+        <div className="site-container grid lg:grid-cols-[0.75fr_1fr] gap-12 lg:gap-16">
           <div>
             <div className="flex flex-col items-start space-y-4 mb-8">
               <span className="text-gold text-xs font-semibold tracking-[0.2em] uppercase">
@@ -146,7 +146,7 @@ export default function AboutPage() {
               </span>
               <div className="w-12 h-[2px] bg-gold/60"></div>
             </div>
-            <h2 className="font-serif text-4xl md:text-5xl leading-tight tracking-tight text-charcoal">
+            <h2 className="site-heading-md font-serif tracking-tight text-charcoal">
               Support for the moments that shape what happens next.
             </h2>
           </div>
@@ -164,7 +164,7 @@ export default function AboutPage() {
       </section>
 
       {/* Shareef's Quote */}
-      <section className="w-full bg-[#111613] py-24 px-6 md:px-16 lg:px-24">
+      <section className="site-gutter site-section w-full bg-[#111613]">
         <div className="max-w-3xl mx-auto text-center">
           <div className="font-serif text-5xl text-gold/40 mb-6">&ldquo;</div>
           <blockquote className="font-serif text-2xl md:text-3xl lg:text-4xl text-cream leading-snug tracking-tight mb-8">

@@ -15,8 +15,8 @@ export default function ImpactPage() {
   return (
     <main className="flex min-h-screen flex-col bg-cream text-charcoal">
       <Navbar />
-      <section className="w-full py-32 px-6 md:px-16 lg:px-24">
-        <div className="max-w-4xl mx-auto">
+      <section className="site-gutter site-page-hero w-full">
+        <div className="site-container-narrow">
           <div className="flex flex-col items-start space-y-4 mb-8">
             <span className="text-gold text-xs font-semibold tracking-[0.2em] uppercase">
               Selected Impact
@@ -24,16 +24,16 @@ export default function ImpactPage() {
             <div className="w-12 h-[2px] bg-gold/60"></div>
           </div>
           
-          <h1 className="font-serif text-5xl md:text-6xl lg:text-7xl leading-tight tracking-tight text-charcoal mb-12">
+          <h1 className="site-heading-xl font-serif tracking-tight text-charcoal mb-10">
             Proven over time.
           </h1>
           
-          <p className="text-charcoal/80 text-xl md:text-2xl leading-relaxed mb-20 font-serif italic max-w-3xl">
+          <p className="text-charcoal/80 text-xl md:text-2xl leading-relaxed mb-14 font-serif italic max-w-3xl">
             Representative examples of the kinds of leadership, organizational, and stakeholder challenges supported across public, nonprofit, donor-funded, and multilateral contexts.
           </p>
 
           {/* Content Blocks */}
-          <div className="space-y-16 mb-24">
+          <div className="space-y-12 mb-16">
             <div className="grid md:grid-cols-[1fr_2fr] gap-8 border-t border-charcoal/10 pt-8">
               <h3 className="font-serif text-2xl text-gold">Leadership coaching & transition</h3>
               <p className="text-charcoal/70 leading-relaxed text-lg">
@@ -66,8 +66,8 @@ export default function ImpactPage() {
       </section>
 
       {/* Testimonials sub-section */}
-      <section className="w-full bg-[#f8f6f2] py-24 px-6 md:px-16 lg:px-24">
-        <div className="max-w-4xl mx-auto">
+      <section className="site-gutter site-section w-full bg-[#f8f6f2]">
+        <div className="site-container-narrow">
            <div className="flex flex-col items-start space-y-4 mb-16">
             <span className="text-gold text-xs font-semibold tracking-[0.2em] uppercase">
               Selected client reflections
@@ -110,7 +110,7 @@ export default function ImpactPage() {
       </section>
 
       {/* Final CTA */}
-      <section className="w-full py-24 px-6 md:px-16 lg:px-24 bg-[#111613]">
+      <section className="site-gutter site-section w-full bg-[#111613]">
          <div className="max-w-3xl mx-auto text-center">
            <p className="text-cream text-xl md:text-2xl font-serif mb-10 leading-relaxed">
              If you are navigating a leadership, team, or organizational challenge and would like to explore whether I may be helpful, write to <a href="mailto:shareef@3ts-inc.com" className="text-gold underline underline-offset-4 hover:text-white transition-colors">shareef@3ts-inc.com</a>.

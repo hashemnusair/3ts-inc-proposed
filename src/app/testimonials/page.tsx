@@ -62,15 +62,15 @@ export default function TestimonialsPage() {
       <Navbar />
 
       {/* Header */}
-      <section className="w-full py-32 px-6 md:px-16 lg:px-24 bg-[#f8f6f2]">
-        <div className="max-w-4xl mx-auto">
+      <section className="site-gutter site-page-hero w-full bg-[#f8f6f2]">
+        <div className="site-container-narrow">
           <div className="flex flex-col items-start space-y-4 mb-8">
             <span className="text-gold text-xs font-semibold tracking-[0.2em] uppercase">
               Client Reflections
             </span>
             <div className="w-12 h-[2px] bg-gold/60"></div>
           </div>
-          <h1 className="font-serif text-5xl md:text-6xl lg:text-7xl leading-tight tracking-tight text-charcoal mb-12">
+          <h1 className="site-heading-xl font-serif tracking-tight text-charcoal mb-10">
             Evidence that endures.
           </h1>
           <p className="text-charcoal/80 text-xl md:text-2xl font-serif italic max-w-3xl leading-relaxed">
@@ -80,7 +80,7 @@ export default function TestimonialsPage() {
       </section>
 
       {/* Real Testimonial Section (Premium Layout) */}
-      <section className="relative w-full py-24 px-6 md:px-16 lg:px-24 bg-white">
+      <section className="site-gutter site-section relative w-full bg-white">
         <div className="max-w-5xl mx-auto">
           <div className="space-y-24">
             {coachingTestimonials.map((t, i) => (
@@ -113,7 +113,7 @@ export default function TestimonialsPage() {
       </section>
 
       {/* Case Study Testimonials */}
-      <section className="relative w-full py-24 px-6 md:px-16 lg:px-24 bg-[#f8f6f2]">
+      <section className="site-gutter site-section relative w-full bg-[#f8f6f2]">
         <div className="max-w-5xl mx-auto">
           <div className="flex flex-col items-start space-y-4 mb-16">
             <span className="text-gold text-xs font-semibold tracking-[0.2em] uppercase">

@@ -69,7 +69,7 @@ const mapDots = Array.from({ length: 400 }).flatMap((_, i) => {
 
 export default function SelectedEngagements() {
   return (
-    <section className="w-full bg-cream py-24 px-6 md:px-16 lg:px-24 border-t border-[#edebe4] relative overflow-hidden">
+    <section className="site-gutter site-section w-full bg-cream border-t border-[#edebe4] relative overflow-hidden">
       {/* Background Stylized Map (Abstract representation) */}
       <div className="absolute right-0 top-0 w-full lg:w-[60%] h-[500px] opacity-10 pointer-events-none">
         <svg
@@ -90,7 +90,7 @@ export default function SelectedEngagements() {
         </svg>
       </div>
 
-      <div className="max-w-7xl mx-auto relative z-10">
+      <div className="site-container relative z-10">
         <div className="flex flex-col items-start space-y-4 mb-8">
           <span className="text-gold text-xs font-semibold tracking-[0.2em] uppercase">
             Selected Engagements
@@ -103,7 +103,7 @@ export default function SelectedEngagements() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="font-serif text-5xl md:text-6xl lg:text-7xl leading-tight tracking-tight text-charcoal mb-6"
+          className="site-heading-xl font-serif tracking-tight text-charcoal mb-6"
         >
           Most of our work <br className="hidden md:block" />
           is confidential.
@@ -114,7 +114,7 @@ export default function SelectedEngagements() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="text-gold text-xl md:text-2xl font-serif italic mb-20"
+          className="text-gold text-xl md:text-2xl font-serif italic mb-14 min-[900px]:mb-16"
         >
           Selected public-safe cases below.
         </motion.p>
@@ -124,14 +124,14 @@ export default function SelectedEngagements() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
-          className="grid grid-cols-1 md:grid-cols-3 gap-6"
+          className="grid grid-cols-1 min-[900px]:grid-cols-3 gap-5 min-[1120px]:gap-6"
         >
           {cases.map((item, index) => (
             <motion.div
               key={index}
               variants={cardVariants}
               whileHover={{ y: -5 }}
-              className="group relative overflow-hidden bg-[#fcfbf9] border border-charcoal/5 p-8 lg:p-10 flex flex-col shadow-[0_10px_40px_-15px_rgba(0,0,0,0.03)] hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.06)] transition-all duration-500"
+              className="group relative overflow-hidden bg-[#fcfbf9] border border-charcoal/5 p-7 min-[1120px]:p-9 flex flex-col shadow-[0_10px_40px_-15px_rgba(0,0,0,0.03)] hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.06)] transition-all duration-500"
             >
               <div className="absolute inset-x-0 top-0 h-px bg-gold/0 transition-colors duration-500 md:group-hover:bg-gold/60"></div>
               <div className="absolute -right-24 -top-24 h-48 w-48 rounded-full border border-gold/0 transition-all duration-700 md:group-hover:-right-16 md:group-hover:-top-16 md:group-hover:border-gold/15"></div>

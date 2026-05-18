@@ -14,7 +14,7 @@ export default function ContactPage() {
   return (
     <main className="flex min-h-screen flex-col bg-cream text-charcoal">
       <Navbar />
-      <section className="w-full max-w-[100vw] overflow-hidden py-32 px-6 md:px-16 lg:px-24 min-h-[60vh] flex flex-col justify-center items-center text-center">
+      <section className="site-gutter site-page-hero w-full max-w-[100vw] overflow-hidden min-h-[60vh] flex flex-col justify-center items-center text-center">
         <div className="w-full max-w-[calc(100vw-3rem)] md:max-w-2xl mx-auto flex flex-col items-center">
           
           <div className="flex flex-col items-center space-y-4 mb-8">
@@ -24,12 +24,12 @@ export default function ContactPage() {
             <div className="w-12 h-[2px] bg-gold/60"></div>
           </div>
           
-          <h1 className="w-full max-w-[20rem] md:max-w-2xl font-serif text-3xl min-[380px]:text-4xl md:text-6xl lg:text-7xl leading-tight tracking-tight text-charcoal mb-10 md:text-balance">
+          <h1 className="site-heading-xl w-full max-w-[20rem] md:max-w-2xl font-serif tracking-tight text-charcoal mb-8 md:text-balance">
             Request a Confidential Conversation
           </h1>
           
-          <p className="w-full max-w-[16rem] md:max-w-lg text-charcoal/80 text-base md:text-xl leading-relaxed mb-16 font-medium">
-            I'd love to hear from you. Reach out to discuss how we might work together to support your individuals, teams, and organization.
+          <p className="w-full max-w-[16rem] md:max-w-lg text-charcoal/80 text-base md:text-xl leading-relaxed mb-12 font-medium">
+            I&rsquo;d love to hear from you. Reach out to discuss how we might work together to support your individuals, teams, and organization.
           </p>
 
           <div className="w-full flex flex-col items-center mb-10">

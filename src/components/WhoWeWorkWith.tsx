@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import type { Variants } from "framer-motion";
 import {
   Bank,
   Globe,
@@ -9,7 +10,7 @@ import {
   Buildings,
 } from "@phosphor-icons/react";
 
-const listVariants: any = {
+const listVariants: Variants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
@@ -19,7 +20,7 @@ const listVariants: any = {
   },
 };
 
-const itemVariants: any = {
+const itemVariants: Variants = {
   hidden: { opacity: 0, x: 20 },
   visible: { opacity: 1, x: 0, transition: { duration: 0.6, ease: "easeOut" } },
 };
@@ -34,8 +35,8 @@ const clients = [
 
 export default function WhoWeWorkWith() {
   return (
-    <section className="w-full bg-[#f8f6f2] py-24 px-6 md:px-16 lg:px-24 border-t border-[#edebe4]">
-      <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center lg:items-start">
+    <section id="who-we-work-with" className="site-gutter site-section w-full scroll-mt-28 bg-[#111613] border-t border-[#111613] text-cream">
+      <div className="site-container flex flex-col lg:flex-row items-center lg:items-start">
         {/* Left Content (Text & Typography) */}
         <div className="w-full lg:w-1/2 pr-0 lg:pr-20 z-10 flex flex-col justify-center mb-16 lg:mb-0">
           <div className="flex flex-col items-start space-y-4 mb-8">
@@ -50,7 +51,7 @@ export default function WhoWeWorkWith() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.8 }}
-            className="font-serif text-4xl md:text-5xl lg:text-6xl leading-tight tracking-tight text-charcoal mb-8"
+            className="site-heading-lg font-serif tracking-tight text-cream mb-8"
           >
             Trusted when the room is complex.
           </motion.h2>
@@ -60,7 +61,7 @@ export default function WhoWeWorkWith() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-charcoal/70 text-lg md:text-xl leading-relaxed max-w-lg"
+            className="site-copy text-cream/62 max-w-lg"
           >
             3Ts works with the sponsors and senior leaders of transformations,
             reforms, and consequential leadership transitions — across
@@ -68,7 +69,7 @@ export default function WhoWeWorkWith() {
             enterprises, and large private-sector organizations.
             <br />
             <br />
-            <span className="font-medium text-charcoal">
+            <span className="font-medium text-cream">
               There is no &ldquo;one size fits all.&rdquo; Every engagement is tailored to meet your specific needs, challenges, and goals.
             </span>
           </motion.p>
@@ -83,18 +84,18 @@ export default function WhoWeWorkWith() {
           className="w-full lg:w-1/2 flex flex-col space-y-0 relative"
         >
           {/* Subtle vertical line connecting the list items visually */}
-          <div className="absolute left-6 top-12 bottom-12 w-px bg-[#edebe4] -z-10 hidden md:block"></div>
+          <div className="absolute left-6 top-12 bottom-12 w-px bg-cream/10 -z-10 hidden md:block"></div>
           
           {clients.map((item, index) => (
             <motion.li
               key={index}
               variants={itemVariants}
-              className="flex items-center space-x-6 border-b border-[#edebe4] py-8 last:border-0 group cursor-default"
+              className="flex items-center gap-6 border-b border-cream/10 py-6 min-[900px]:py-7 last:border-0 group cursor-default"
             >
-              <div className="w-12 h-12 rounded-full bg-[#fcfbf9] border border-charcoal/10 flex items-center justify-center shrink-0 shadow-[0_4px_10px_-5px_rgba(0,0,0,0.05)] group-hover:border-gold/50 group-hover:shadow-[0_4px_15px_-5px_rgba(0,0,0,0.1)] transition-all duration-300">
-                <item.icon size={24} weight="light" className="text-charcoal group-hover:text-gold transition-colors duration-300" />
+              <div className="w-12 h-12 rounded-full bg-cream/[0.04] border border-cream/10 flex items-center justify-center shrink-0 shadow-[0_4px_10px_-5px_rgba(0,0,0,0.2)] group-hover:border-gold/50 group-hover:bg-gold/10 transition-all duration-300">
+                <item.icon size={24} weight="light" className="text-cream/72 group-hover:text-gold transition-colors duration-300" />
               </div>
-              <div className="text-xl md:text-2xl font-serif text-charcoal/80 group-hover:text-charcoal transition-colors duration-300">
+              <div className="text-xl md:text-2xl font-serif text-cream/78 group-hover:text-cream transition-colors duration-300">
                 {item.text}
               </div>
             </motion.li>

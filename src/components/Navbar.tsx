@@ -4,6 +4,7 @@ import { useState, useEffect, useLayoutEffect } from "react";
 import type { MouseEvent } from "react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
+import type { Variants } from "framer-motion";
 import { usePathname, useRouter } from "next/navigation";
 
 const links = [
@@ -15,7 +16,7 @@ const links = [
   { href: "/contact", label: "Contact" },
 ];
 
-const menuVariants: any = {
+const menuVariants: Variants = {
   closed: {
     opacity: 0,
     y: "-100%",
@@ -34,7 +35,7 @@ const menuVariants: any = {
   },
 };
 
-const linkContainerVariants: any = {
+const linkContainerVariants: Variants = {
   closed: {
     transition: {
       staggerChildren: 0.05,
@@ -49,7 +50,7 @@ const linkContainerVariants: any = {
   },
 };
 
-const linkVariants: any = {
+const linkVariants: Variants = {
   closed: { opacity: 0, y: 20 },
   open: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
 };
@@ -76,8 +77,12 @@ export default function Navbar() {
 
   // Close menu on route change
   useEffect(() => {
-    setIsOpen(false);
-    setIsMenuNavigating(false);
+    const frame = window.requestAnimationFrame(() => {
+      setIsOpen(false);
+      setIsMenuNavigating(false);
+    });
+
+    return () => window.cancelAnimationFrame(frame);
   }, [pathname]);
 
   // Prevent scrolling when menu is open
@@ -148,22 +153,22 @@ export default function Navbar() {
           initial={shouldAnimateIntro ? { opacity: 0, y: -20 } : false}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="w-full px-6 md:px-12 py-6 flex items-center justify-between"
+          className="site-gutter w-full py-5 min-[1120px]:py-6 flex items-center justify-between"
         >
-          <div className="flex items-center space-x-6">
+          <div className="flex items-center gap-5 min-[1120px]:gap-6">
             <Link href="/" className="flex flex-col z-[70]">
-              <span className={`site-nav-brand font-serif text-2xl md:text-3xl tracking-tight ${brandToneClass}`}>
+              <span className={`site-nav-brand whitespace-nowrap font-serif text-2xl min-[1120px]:text-3xl tracking-tight ${brandToneClass}`}>
                 3Ts Consulting
               </span>
-              <span className="font-sans text-[10px] md:text-xs tracking-widest text-gold mt-1 uppercase">
+              <span className="font-sans text-[10px] min-[1120px]:text-xs tracking-widest text-gold mt-1 uppercase whitespace-nowrap">
                 Thoroughly. Thought. Through.
               </span>
             </Link>
-            <div className={`site-nav-divider hidden md:block w-px h-10 ${dividerToneClass}`}></div>
+            <div className={`site-nav-divider hidden min-[1120px]:block w-px h-10 ${dividerToneClass}`}></div>
           </div>
 
           {/* Desktop Links */}
-          <nav className={`site-nav-tone hidden md:flex items-center space-x-8 text-sm font-medium tracking-widest uppercase ${navToneClass}`}>
+          <nav className={`site-nav-tone site-nav-desktop items-center gap-6 xl:gap-8 text-[13px] xl:text-sm font-medium tracking-widest uppercase ${navToneClass}`}>
             {links.slice(0, 5).map((link) => {
               const isActive = pathname === link.href;
 
@@ -182,7 +187,7 @@ export default function Navbar() {
           </nav>
 
           {/* Desktop Contact */}
-          <div className="hidden md:flex items-center space-x-6">
+          <div className="site-nav-desktop items-center gap-6">
             <div className={`site-nav-divider w-px h-10 ${dividerToneClass}`}></div>
             <Link
               href="/contact"
@@ -200,7 +205,7 @@ export default function Navbar() {
 
           {/* Mobile Hamburger Toggle */}
           <button
-            className={`site-nav-brand md:hidden flex items-center justify-center p-2 -mr-2 z-[70] hover:text-gold focus:outline-none group ${brandToneClass}`}
+            className={`site-nav-brand site-nav-mobile items-center justify-center p-2 -mr-2 z-[70] hover:text-gold focus:outline-none group ${brandToneClass}`}
             onClick={() => {
               setIsMenuNavigating(false);
               setIsOpen((current) => !current);
@@ -238,7 +243,7 @@ export default function Navbar() {
       </header>
 
       {/* Spacer to replace sticky flow — hidden on homepage where hero bleeds behind navbar */}
-      {!isHome && <div className="w-full h-[96px] shrink-0"></div>}
+      {!isHome && <div className="w-full h-[88px] min-[1120px]:h-[96px] shrink-0"></div>}
 
       {/* Fullscreen Mobile Menu Overlay */}
       <AnimatePresence>
@@ -248,7 +253,7 @@ export default function Navbar() {
             initial="closed"
             animate="open"
             exit="closed"
-            className="fixed inset-0 h-[100dvh] bg-cream z-40 flex flex-col justify-center px-8 md:hidden overflow-hidden touch-none overscroll-none"
+            className="fixed inset-0 h-[100dvh] bg-cream z-40 site-nav-mobile flex-col justify-center px-8 overflow-hidden touch-none overscroll-none"
           >
             <motion.nav
               variants={linkContainerVariants}

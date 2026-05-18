@@ -6,7 +6,7 @@ import Image from "next/image";
 export default function ImageBreak({
   src,
   alt,
-  height = "h-[40vh] md:h-[55vh]",
+  height = "media-break",
   position = "center",
   caption,
 }: {

@@ -1,6 +1,9 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
+import ProofQuoteStrip from "@/components/ProofQuoteStrip";
 import WhoWeWorkWith from "@/components/WhoWeWorkWith";
+import WhatPeopleCallAbout from "@/components/WhatPeopleCallAbout";
+import StartingPointFinder from "@/components/StartingPointFinder";
 import WhatWeDo from "@/components/WhatWeDo";
 import WhyAndImpact from "@/components/WhyAndImpact";
 import SelectedEngagements from "@/components/SelectedEngagements";
@@ -23,11 +26,14 @@ export default function Home() {
     <main className="flex min-h-screen flex-col bg-cream text-charcoal">
       <Navbar />
       <Hero />
+      <ProofQuoteStrip />
       <WhoWeWorkWith />
+      <WhatPeopleCallAbout />
+      <StartingPointFinder />
       <ImageBreak
         src="/home-convening.webp"
         alt="Prepared executive convening room"
-        height="h-[42vh] md:h-[58vh]"
+        height="media-break-tall"
         position="center"
       />
       <WhatWeDo />
@@ -37,7 +43,7 @@ export default function Home() {
       <ImageBreak
         src="/home-kindness.webp"
         alt="Quiet leadership conversation setting"
-        height="h-[38vh] md:h-[52vh]"
+        height="media-break"
         position="center"
       />
       <Testimonials />

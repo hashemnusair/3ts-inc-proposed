@@ -1,7 +1,6 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Image from "next/image";
 import Link from "next/link";
 
 const testimonials = [
@@ -33,20 +32,20 @@ export default function Testimonials() {
         {/* Subtle overlay texture if desired */}
       </div>
 
-      <div className="relative z-10 w-full py-32 px-6 md:px-16 lg:px-24 max-w-6xl mx-auto flex-grow flex flex-col">
+      <div className="site-gutter site-section relative z-10 w-full max-w-6xl mx-auto flex-grow flex flex-col">
         {/* Header */}
         <div className="flex flex-col items-start space-y-4 mb-20">
           <span className="text-gold text-xs font-semibold tracking-[0.2em] uppercase">
             What Clients Have Said
           </span>
           <div className="w-12 h-[2px] bg-gold/60"></div>
-          <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl leading-tight tracking-tight text-charcoal mt-6">
+          <h2 className="site-heading-lg font-serif tracking-tight text-charcoal mt-6">
             Real evidence from real leaders.
           </h2>
         </div>
 
         {/* Vertical Stack instead of cramped grid */}
-        <div className="space-y-20 mb-20">
+        <div className="space-y-14 min-[900px]:space-y-16 mb-16">
           {testimonials.map((t, i) => (
             <motion.div
               key={i}

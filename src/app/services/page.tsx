@@ -16,23 +16,23 @@ export default function ServicesPage() {
   return (
     <main className="flex min-h-screen flex-col bg-cream text-charcoal">
       <Navbar />
-      <section className="w-full py-32 px-6 md:px-16 lg:px-24">
-        <div className="max-w-4xl mx-auto">
+      <section className="site-gutter site-page-hero w-full">
+        <div className="site-container-narrow">
           <div className="flex flex-col items-start space-y-4 mb-8">
             <span className="text-gold text-xs font-semibold tracking-[0.2em] uppercase">
               Services
             </span>
             <div className="w-12 h-[2px] bg-gold/60"></div>
           </div>
-          <h1 className="font-serif text-5xl md:text-6xl lg:text-7xl leading-tight tracking-tight text-charcoal mb-12">
+          <h1 className="site-heading-xl font-serif tracking-tight text-charcoal mb-10">
             Structured interventions for complex alignment problems.
           </h1>
         </div>
       </section>
 
-      <section className="w-full px-6 md:px-16 lg:px-24 pb-24">
-        <div className="max-w-7xl mx-auto grid lg:grid-cols-[1fr_0.72fr] gap-10 lg:gap-16 items-end">
-          <div className="relative h-[380px] md:h-[520px] bg-charcoal overflow-hidden shadow-[0_24px_70px_-30px_rgba(0,0,0,0.22)]">
+      <section className="site-gutter w-full pb-[clamp(4rem,6vw,6rem)]">
+        <div className="site-container grid lg:grid-cols-[1fr_0.72fr] gap-10 lg:gap-14 items-end">
+          <div className="relative h-[clamp(24rem,38vw,32rem)] bg-charcoal overflow-hidden shadow-[0_24px_70px_-30px_rgba(0,0,0,0.22)]">
             <Image
               src="/services-intervention.webp"
               alt="Structured advisory materials arranged for a decision sprint"
@@ -61,7 +61,7 @@ export default function ServicesPage() {
           </div>
         </div>
 
-        <div className="mx-auto mt-14 max-w-7xl border-y border-charcoal/10 py-5">
+        <div className="site-container mt-12 border-y border-charcoal/10 py-5">
           <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
             <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-gold">
               How a conversation becomes movement
@@ -82,9 +82,9 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      <section className="w-full bg-[#111613] px-6 py-20 md:px-16 lg:px-24">
-        <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[0.72fr_1fr] lg:items-center">
-          <div className="relative h-[440px] overflow-hidden bg-charcoal shadow-[0_24px_70px_-30px_rgba(0,0,0,0.5)] md:h-[560px]">
+      <section className="site-gutter site-section-tight w-full bg-[#111613]">
+        <div className="site-container grid gap-12 lg:grid-cols-[0.72fr_1fr] lg:items-center">
+          <div className="relative h-[clamp(27rem,42vw,35rem)] overflow-hidden bg-charcoal shadow-[0_24px_70px_-30px_rgba(0,0,0,0.5)]">
             <Image
               src="/shareef-presenting.webp"
               alt="Shareef Khatib facilitating a working session"
@@ -106,7 +106,7 @@ export default function ServicesPage() {
               </span>
               <div className="h-[2px] w-12 bg-gold/60"></div>
             </div>
-            <p className="mb-8 font-serif text-3xl leading-snug text-cream md:text-5xl">
+            <p className="site-heading-md mb-8 font-serif text-cream">
               The service is not only the framework. It is the judgment inside
               the room.
             </p>

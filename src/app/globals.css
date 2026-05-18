@@ -55,6 +55,133 @@ a {
   overflow-wrap: break-word;
 }
 
+.site-gutter {
+  padding-left: clamp(1.5rem, 4.5vw, 6rem);
+  padding-right: clamp(1.5rem, 4.5vw, 6rem);
+}
+
+.site-container {
+  width: 100%;
+  max-width: 90rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.site-container-narrow {
+  width: 100%;
+  max-width: 64rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.site-section {
+  padding-top: clamp(4.5rem, 7vw, 7.5rem);
+  padding-bottom: clamp(4.5rem, 7vw, 7.5rem);
+}
+
+.site-section-tight {
+  padding-top: clamp(3.5rem, 5.5vw, 6rem);
+  padding-bottom: clamp(3.5rem, 5.5vw, 6rem);
+}
+
+.site-page-hero {
+  padding-top: clamp(7rem, 10vw, 9.5rem);
+  padding-bottom: clamp(3rem, 5vw, 5.5rem);
+}
+
+.site-heading-xl {
+  font-size: clamp(3rem, 5.1vw, 6.25rem);
+  line-height: 0.98;
+}
+
+.site-heading-lg {
+  font-size: clamp(2.5rem, 4vw, 4.75rem);
+  line-height: 1.03;
+}
+
+.site-heading-md {
+  font-size: clamp(2rem, 3vw, 3.5rem);
+  line-height: 1.08;
+}
+
+.site-copy {
+  font-size: clamp(1rem, 1.1vw, 1.18rem);
+  line-height: 1.7;
+}
+
+.hero-stage {
+  min-height: clamp(42rem, 88svh, 61.25rem);
+  max-height: 67.5rem;
+}
+
+.hero-gutter {
+  padding-left: clamp(1.5rem, 4.5vw, 6rem);
+  padding-right: clamp(1.5rem, 4.5vw, 6rem);
+  padding-top: clamp(8rem, 16svh, 12.5rem);
+  padding-bottom: clamp(2rem, 5svh, 3.5rem);
+}
+
+.hero-copy {
+  width: 100%;
+  max-width: min(48rem, calc(100vw - 3rem));
+}
+
+.hero-tagline {
+  width: 100%;
+  max-width: min(38rem, calc(100vw - 3rem));
+}
+
+.media-break {
+  height: clamp(18rem, 34vw, 34rem);
+}
+
+.media-break-tall {
+  height: clamp(20rem, 38vw, 38rem);
+}
+
+@media (min-width: 1120px) {
+  .site-nav-desktop {
+    display: flex;
+  }
+
+  .site-nav-mobile {
+    display: none;
+  }
+}
+
+@media (max-width: 1119px) {
+  .site-nav-desktop {
+    display: none;
+  }
+
+  .site-nav-mobile {
+    display: flex;
+  }
+}
+
+@media (min-width: 1800px) {
+  .hero-stage {
+    min-height: min(82svh, 67.5rem);
+  }
+}
+
+@media (max-width: 767px) {
+  .site-heading-xl {
+    font-size: clamp(2.25rem, 9.4vw, 2.75rem);
+    line-height: 1.02;
+  }
+
+  .hero-stage {
+    min-height: 100svh;
+    max-height: none;
+  }
+
+  .hero-gutter {
+    padding-top: clamp(8.5rem, 18svh, 11rem);
+    padding-bottom: 2.25rem;
+  }
+}
+
 @media (max-width: 767px) {
   .text-balance {
     text-wrap: wrap;

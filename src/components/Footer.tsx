@@ -1,11 +1,9 @@
 "use client";
 
-import { motion } from "framer-motion";
-
 export default function Footer() {
   return (
-    <footer className="w-full bg-[#151a16] pt-16 pb-24 px-6 md:px-16 lg:px-24">
-      <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-start md:items-end justify-between border-t border-cream/10 pt-16">
+    <footer className="site-gutter w-full bg-[#151a16] pt-14 pb-20 min-[900px]:pt-16 min-[900px]:pb-24">
+      <div className="site-container flex flex-col md:flex-row items-start md:items-end justify-between border-t border-cream/10 pt-14 min-[900px]:pt-16">
         <div className="mb-12 md:mb-0">
           <div className="flex flex-col items-start space-y-4 mb-8">
             <span className="text-gold text-xs font-semibold tracking-[0.2em] uppercase">

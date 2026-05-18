@@ -32,8 +32,8 @@ export default function WhyAndImpact() {
   return (
     <section className="w-full bg-[#f8f6f2] flex flex-col">
       {/* WHY Section */}
-      <div className="w-full py-24 px-6 md:px-16 lg:px-24 border-t border-[#edebe4]">
-        <div className="max-w-7xl mx-auto flex flex-col lg:flex-row">
+      <div className="site-gutter site-section w-full border-t border-[#edebe4]">
+        <div className="site-container flex flex-col lg:flex-row">
           {/* Left */}
           <div className="w-full lg:w-1/3 pr-0 lg:pr-12 mb-16 lg:mb-0">
             <div className="flex flex-col items-start space-y-4 mb-8">
@@ -47,7 +47,7 @@ export default function WhyAndImpact() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
-              className="font-serif text-4xl md:text-5xl lg:text-6xl leading-tight tracking-tight text-charcoal"
+              className="site-heading-lg font-serif tracking-tight text-charcoal"
             >
               Patterns we help clients move through.
             </motion.h2>
@@ -62,7 +62,7 @@ export default function WhyAndImpact() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="flex items-center border-b border-[#edebe4] py-8 group cursor-pointer hover:bg-white/40 transition-colors px-4"
+                className="flex items-center border-b border-[#edebe4] py-6 min-[900px]:py-7 group cursor-pointer hover:bg-white/40 transition-colors px-4"
               >
                 <div className="w-24 shrink-0 font-serif text-3xl text-gold text-center border-r border-[#edebe4] mr-8">
                   0{index + 1}
@@ -80,8 +80,8 @@ export default function WhyAndImpact() {
       </div>
 
       {/* IMPACT Section */}
-      <div className="w-full py-24 px-6 md:px-16 lg:px-24 bg-[#111613] border-t border-[#111613]">
-        <div className="max-w-7xl mx-auto flex flex-col lg:flex-row">
+      <div className="site-gutter site-section w-full bg-[#111613] border-t border-[#111613]">
+        <div className="site-container flex flex-col lg:flex-row">
           {/* Left */}
           <div className="w-full lg:w-1/4 pr-0 lg:pr-12 mb-16 lg:mb-0">
             <div className="flex flex-col items-start space-y-4 mb-8">
@@ -95,7 +95,7 @@ export default function WhyAndImpact() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
-              className="font-serif text-4xl md:text-5xl leading-tight tracking-tight text-cream"
+              className="site-heading-md font-serif tracking-tight text-cream"
             >
               Real progress you can actually measure.
             </motion.h2>
@@ -114,7 +114,7 @@ export default function WhyAndImpact() {
                   index !== 0 ? "lg:border-l lg:border-cream/10 lg:pl-8" : ""
                 }`}
               >
-                <div className="font-serif text-6xl md:text-7xl text-cream mb-4 tracking-tighter">
+                <div className="font-serif text-[clamp(3.5rem,4.8vw,4.75rem)] text-cream mb-4 tracking-tighter">
                   {impact.value}
                 </div>
                 <div className="w-8 h-px bg-gold/60 mb-6 hidden lg:block"></div>

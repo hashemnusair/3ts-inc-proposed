@@ -6,8 +6,8 @@ import Link from "next/link";
 
 export default function AboutUs() {
   return (
-    <section className="w-full bg-[#f8f6f2] py-24 px-6 md:px-16 lg:px-24 border-t border-[#edebe4]">
-      <div className="max-w-7xl mx-auto flex flex-col-reverse lg:flex-row items-center">
+    <section className="site-gutter site-section w-full bg-[#f8f6f2] border-t border-[#edebe4]">
+      <div className="site-container flex flex-col-reverse lg:flex-row items-center">
         {/* Left Content */}
         <div className="w-full lg:w-1/2 pr-0 lg:pr-16 mt-16 lg:mt-0 z-10">
           <div className="flex flex-col items-start space-y-4 mb-8">
@@ -86,7 +86,7 @@ export default function AboutUs() {
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 1, ease: "easeOut" }}
-          className="w-full lg:w-1/2 relative h-[420px] md:h-[560px] lg:h-[640px] shadow-[0_20px_60px_-15px_rgba(0,0,0,0.14)] bg-charcoal overflow-hidden"
+          className="w-full lg:w-1/2 relative h-[clamp(26rem,48vw,40rem)] shadow-[0_20px_60px_-15px_rgba(0,0,0,0.14)] bg-charcoal overflow-hidden"
         >
           <Image
             src="/shareef-khatib.webp"

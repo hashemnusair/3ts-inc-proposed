@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import type { Variants } from "framer-motion";
 import Link from "next/link";
 
 const engagements = [
@@ -38,15 +39,15 @@ const containerVariants = {
   },
 };
 
-const cardVariants: any = {
+const cardVariants: Variants = {
   hidden: { opacity: 0, y: 30 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: "easeOut" } },
 };
 
 export default function WhatWeDo() {
   return (
-    <section className="w-full bg-cream py-24 px-6 md:px-16 lg:px-24 border-t border-[#edebe4]">
-      <div className="max-w-7xl mx-auto">
+    <section className="site-gutter site-section w-full bg-cream border-t border-[#edebe4]">
+      <div className="site-container">
         <div className="flex flex-col items-start space-y-4 mb-8">
           <span className="text-gold text-xs font-semibold tracking-[0.2em] uppercase">
             What We Do
@@ -59,7 +60,7 @@ export default function WhatWeDo() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.8 }}
-          className="font-serif text-4xl md:text-5xl lg:text-6xl leading-tight tracking-tight text-charcoal max-w-4xl mb-20"
+          className="site-heading-lg font-serif tracking-tight text-charcoal max-w-4xl mb-14 min-[900px]:mb-16"
         >
           Our work is organized around four engagements, each designed for a
           different stage of the alignment problem.
@@ -70,14 +71,14 @@ export default function WhatWeDo() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
-          className="grid grid-cols-1 md:grid-cols-2 gap-6"
+          className="grid grid-cols-1 md:grid-cols-2 gap-5 min-[1120px]:gap-6"
         >
           {engagements.map((item, index) => (
             <motion.div
               key={index}
               variants={cardVariants}
               whileHover={{ y: -5 }}
-              className="bg-[#fcfbf9] border border-charcoal/5 p-10 md:p-14 flex flex-col md:flex-row shadow-[0_10px_40px_-15px_rgba(0,0,0,0.03)] hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.06)] transition-all duration-300"
+              className="bg-[#fcfbf9] border border-charcoal/5 p-8 min-[900px]:p-10 xl:p-12 flex flex-col md:flex-row shadow-[0_10px_40px_-15px_rgba(0,0,0,0.03)] hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.06)] transition-all duration-300"
             >
               <div className="flex items-start mb-6 md:mb-0 md:mr-10 shrink-0">
                 <span className="font-serif text-4xl md:text-5xl text-gold">
