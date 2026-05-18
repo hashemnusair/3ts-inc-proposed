@@ -28,7 +28,6 @@ export default function Home() {
       <Hero />
       <ProofQuoteStrip />
       <WhoWeWorkWith />
-      <WhatPeopleCallAbout />
       <StartingPointFinder />
       <ImageBreak
         src="/home-convening.webp"
@@ -37,6 +36,7 @@ export default function Home() {
         position="center"
       />
       <WhatWeDo />
+      <WhatPeopleCallAbout />
       <WhyAndImpact />
       <SelectedEngagements />
       <AboutUs />
