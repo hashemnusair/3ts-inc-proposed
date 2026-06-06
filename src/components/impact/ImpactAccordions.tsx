@@ -31,12 +31,10 @@ export default function ImpactAccordions() {
                   onClick={() => setOpenSection(isOpen ? "" : section.id)}
                   className="flex w-full items-center justify-between gap-5 p-6 text-left md:gap-8 md:p-8"
                 >
-                  <span className="grid min-w-0 flex-1 gap-5 md:grid-cols-[auto_1fr] md:items-center">
+                  <span className="grid min-w-0 flex-1 gap-4 md:grid-cols-[5.5rem_1fr] md:items-start md:gap-8">
                     <span
-                      className={`flex h-16 w-16 shrink-0 items-center justify-center border font-serif text-3xl transition-colors ${
-                        isOpen
-                          ? "border-gold bg-gold text-[#111613]"
-                          : "border-gold/35 bg-cream text-gold group-hover:border-gold/70"
+                      className={`font-serif text-5xl leading-none transition-colors md:text-6xl ${
+                        isOpen ? "text-gold" : "text-gold/72"
                       }`}
                     >
                       0{sectionIndex + 1}
@@ -45,7 +43,7 @@ export default function ImpactAccordions() {
                       <span className="mb-3 block text-xs font-semibold uppercase tracking-[0.2em] text-gold">
                         {section.eyebrow}
                       </span>
-                      <span className="block font-serif text-2xl leading-tight text-charcoal md:text-4xl">
+                      <span className="block max-w-5xl font-serif text-3xl leading-[1.05] text-charcoal md:text-5xl lg:text-6xl">
                         {section.title}
                       </span>
                     </span>
