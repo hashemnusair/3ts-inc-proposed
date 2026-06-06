@@ -40,10 +40,10 @@ export default function ImpactAccordions() {
                       0{sectionIndex + 1}
                     </span>
                     <span className="min-w-0">
-                      <span className="mb-3 block text-xs font-semibold uppercase tracking-[0.2em] text-gold">
+                      <span className="mb-4 block text-sm font-semibold uppercase leading-relaxed tracking-[0.2em] text-gold md:text-base">
                         {section.eyebrow}
                       </span>
-                      <span className="block max-w-5xl font-serif text-3xl leading-[1.05] text-charcoal md:text-5xl lg:text-6xl">
+                      <span className="block max-w-4xl font-serif text-2xl leading-[1.08] text-charcoal md:text-4xl lg:text-5xl">
                         {section.title}
                       </span>
                     </span>
