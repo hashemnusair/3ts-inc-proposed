@@ -1,29 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Image from "next/image";
 import Link from "next/link";
-
-const testimonials = [
-  {
-    quote:
-      "Working with Shareef was such a pleasure, and was so impactful for me. At the outset, I had doubts: prior experiences of coaching had caused me to question my instincts. I shared this concern with Shareef, who made me feel heard and safe enough to give coaching another try, and I’m really glad I did. When I started coaching, I was in the process of growing my team, and hoping to build my confidence as a leader. Shareef supported me to think about topics including body language and polarity of thinking, and through probing but supportive questions, helped me to reframe my own internal dialogue. He also encouraged me to draw on the areas where I already felt secure in my own abilities, helping me to remember the skills that I knew I already had in my wheelhouse and to recognize how these could be applied to the leadership of a new and expanding team. By the end of the 6-week coaching programme, my confidence in my own intuition and as a leader had increased significantly. I was able to recognize and celebrate my strengths, sit comfortably with the idea of making and learning from mistakes and access a level of self-assuredness that I’d been craving for a long time. I’ve been left less reliant on external validation, free of much of the self-doubt I had been experiencing for years and with actionable strategies to manage these challenges should they reoccur in future. Thank you so much Shareef – your support has been transformational!",
-    author: "Penny D.",
-    title: "Head of Fundraising, Settle UK",
-  },
-  {
-    quote:
-      "When I had to prepare for a big presentation to a 1000+ crowd of colleagues and experts, Shareef’s help was a game-changer. His mixture of experience, empathy, and clear guidance turned my rushed prep into a confident and polished performance. Shareef’s support helped me refine my strategy and sharpen my message, ensuring my presentation had maximum impact. Shareef’s unassuming yet effective coaching style, stress management tips, and composure techniques have also made a huge difference in my workplace experience. He combines professionalism with a deep understanding of clients’ needs. His dedication and ability to help me conquer nerves and feel confident allowed me to overcome my fear of public speaking, and has allowed me to be generally more grounded and ready to tackle professional challenges ahead.",
-    author: "Hannah D.",
-    title: "International Program Manager, Multilateral Donor",
-  },
-  {
-    quote:
-      "Shareef has been a great coach for me as a new manager. He has provided me tools to work through customized strategies for dealing with new management situations and to empower my team. His wealth of personal leadership experience provides great context for how to approach challenging management situations and his coaching style has given me assurance that my intrinsic ability can manifest into strong, empathetic leadership for my team.",
-    author: "Andrew F.",
-    title: "Division Lead, International Assistance – Energy Sector",
-  },
-];
+import { homepageTestimonials } from "@/lib/shareefContent";
 
 export default function Testimonials() {
   return (
@@ -47,7 +26,7 @@ export default function Testimonials() {
 
         {/* Vertical Stack instead of cramped grid */}
         <div className="space-y-20 mb-20">
-          {testimonials.map((t, i) => (
+          {homepageTestimonials.map((t, i) => (
             <motion.div
               key={i}
               initial={{ opacity: 0, y: 30 }}

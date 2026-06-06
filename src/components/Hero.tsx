@@ -41,11 +41,11 @@ export default function Hero() {
           className="w-full max-w-[calc(100vw-3rem)] md:max-w-3xl"
         >
           <h1 className="w-full max-w-[19rem] md:max-w-2xl font-serif text-4xl md:text-6xl lg:text-7xl leading-[1.08] md:leading-[1.1] tracking-tight text-white mb-8 md:text-balance">
-            For the alignment problems that stall transformations.
+            The strategy is not the problem. The room is.
           </h1>
 
-          <p className="w-full max-w-[20rem] md:max-w-lg text-white/70 text-base md:text-lg leading-relaxed mb-10 md:mb-12 text-pretty">
-            Grounded in neuroscience, governance, and 20 years of global experience — helping leadership teams navigate complexity and move forward with clarity.
+          <p className="w-full max-w-[21rem] md:max-w-2xl text-white/76 text-base md:text-lg leading-relaxed mb-10 md:mb-12 text-pretty">
+            Transformations stall when the people who must implement a decision are not yet aligned around it, or aren’t even present. I work with senior sponsors in the MENA region to convene and hold the rooms where that alignment is built, and to ensure the decisions made there survive contact with reality.
           </p>
 
           <Link href="/contact" className="block w-full max-w-[20rem] sm:inline-block sm:w-auto sm:max-w-full">
@@ -66,9 +66,8 @@ export default function Hero() {
             3<span className="text-3xl ml-0.5">T</span>
           </div>
           <p className="text-sm text-white/50 leading-relaxed font-medium">
-            Private advisory for governments, multilaterals, sovereign-backed
-            institutions, family enterprises, and large private-sector
-            organizations.
+            Senior advisory for high-stakes alignment in transformation
+            settings.
           </p>
         </motion.div>
       </div>

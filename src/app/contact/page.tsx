@@ -3,9 +3,9 @@ import Footer from "@/components/Footer";
 import { pageMetadata } from "@/lib/metadata";
 
 export const metadata = pageMetadata({
-  title: "Contact — 3Ts Consulting",
+  title: "Start with a Conversation — 3Ts Consulting",
   description:
-    "Request a confidential conversation with Shareef Khatib about a leadership, team, or organizational challenge.",
+    "Start with a short, confidential conversation about a stalled decision, a room that needs design, or a senior transition underway.",
   path: "/contact",
   image: "/og/contact.webp",
 });
@@ -14,51 +14,67 @@ export default function ContactPage() {
   return (
     <main className="flex min-h-screen flex-col bg-cream text-charcoal">
       <Navbar />
-      <section className="w-full max-w-[100vw] overflow-hidden py-32 px-6 md:px-16 lg:px-24 min-h-[60vh] flex flex-col justify-center items-center text-center">
-        <div className="w-full max-w-[calc(100vw-3rem)] md:max-w-2xl mx-auto flex flex-col items-center">
-          
-          <div className="flex flex-col items-center space-y-4 mb-8">
-            <span className="text-gold text-xs font-semibold tracking-[0.2em] uppercase">
-              Contact
-            </span>
-            <div className="w-12 h-[2px] bg-gold/60"></div>
-          </div>
-          
-          <h1 className="w-full max-w-[20rem] md:max-w-2xl font-serif text-3xl min-[380px]:text-4xl md:text-6xl lg:text-7xl leading-tight tracking-tight text-charcoal mb-10 md:text-balance">
-            Request a Confidential Conversation
-          </h1>
-          
-          <p className="w-full max-w-[16rem] md:max-w-lg text-charcoal/80 text-base md:text-xl leading-relaxed mb-16 font-medium">
-            I'd love to hear from you. Reach out to discuss how we might work together to support your individuals, teams, and organization.
-          </p>
 
-          <div className="w-full flex flex-col items-center mb-10">
-             <span className="text-gold text-xs font-semibold tracking-[0.2em] uppercase mb-4">
-                Email
-             </span>
-             <a href="mailto:shareef@3ts-inc.com" className="font-serif text-2xl md:text-4xl text-charcoal hover:text-gold transition-colors break-all">
-                shareef@3ts-inc.com
-             </a>
+      <section className="flex min-h-[72vh] w-full flex-col justify-center px-6 py-32 md:px-16 lg:px-24">
+        <div className="mx-auto grid max-w-7xl gap-14 lg:grid-cols-[0.9fr_0.68fr] lg:items-end">
+          <div>
+            <div className="mb-8 flex flex-col items-start space-y-4">
+              <span className="text-xs font-semibold uppercase tracking-[0.2em] text-gold">
+                Contact
+              </span>
+              <div className="h-[2px] w-12 bg-gold/60" />
+            </div>
+
+            <h1 className="mb-10 max-w-4xl font-serif text-5xl leading-tight tracking-tight text-charcoal md:text-7xl">
+              Start with a conversation.
+            </h1>
+
+            <div className="max-w-3xl space-y-7 text-lg leading-relaxed text-charcoal/76 md:text-xl">
+              <p>
+                If a decision is stalled, a room needs design, or a transition
+                is underway — and you are wondering whether this work might be
+                relevant — the right first step is a short, confidential
+                conversation.
+              </p>
+              <p>
+                There is no pitch. No proposal before we have spoken. The first
+                conversation is for clarity: whether the situation fits, whether
+                the timing is right, and whether there is a useful next step
+                worth taking.
+              </p>
+            </div>
           </div>
 
-          <div className="w-full flex flex-col items-center mb-16">
-             <span className="text-gold text-xs font-semibold tracking-[0.2em] uppercase mb-4">
-                Office Locations
-             </span>
-             <p className="w-full max-w-[16rem] md:max-w-none text-charcoal/80 text-base md:text-lg leading-relaxed">
-                Washington, DC • Sarasota, FL • London, UK • Amman, JO
-             </p>
-          </div>
-          
-          <a
-            href="mailto:shareef@3ts-inc.com"
-            className="group relative overflow-hidden bg-[#2A372C] text-white px-5 md:px-10 py-5 text-xs md:text-sm tracking-[0.08em] md:tracking-widest uppercase font-medium hover:bg-[#1E2520] transition-all transform hover:-translate-y-1 active:translate-y-0 shadow-xl w-full max-w-[16rem] md:max-w-none text-center leading-relaxed"
-          >
-            <span className="relative z-10">Email shareef@3ts-inc.com</span>
-            <div className="absolute inset-0 bg-white/10 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out z-0"></div>
-          </a>
+          <aside className="border border-charcoal/10 bg-[#f8f6f2] p-8 shadow-[0_24px_70px_-40px_rgba(0,0,0,0.22)] md:p-10">
+            <p className="mb-4 text-xs font-semibold uppercase tracking-[0.2em] text-gold">
+              Write to
+            </p>
+            <a
+              href="mailto:shareef@3ts-inc.com"
+              className="block break-all font-serif text-3xl leading-tight text-charcoal transition-colors hover:text-gold md:text-4xl"
+            >
+              shareef@3ts-inc.com
+            </a>
+
+            <div className="my-10 h-px w-full bg-charcoal/10" />
+
+            <p className="mb-8 text-lg leading-relaxed text-charcoal/72">
+              Washington, DC · London, UK · Amman, JO
+            </p>
+
+            <div className="space-y-5 border-l border-gold/50 pl-5 text-base leading-relaxed text-charcoal/72">
+              <p>
+                All initial conversations are completely confidential. Nothing
+                discussed is shared, attributed, or referenced without your
+                explicit agreement.
+              </p>
+              <p>No recordings. No AI note takers.</p>
+              <p>Meeting method and/or platform of your choosing.</p>
+            </div>
+          </aside>
         </div>
       </section>
+
       <Footer />
     </main>
   );

@@ -1,31 +1,13 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { homeImpactStats } from "@/lib/shareefContent";
 
 const patterns = [
   "When the stakes are high and alignment is fragile.",
   "When a consequential decision is stalled by competing priorities.",
   "When the room needs design before the meeting begins.",
   "When a new senior leader needs judgment in a politically sensitive first chapter.",
-];
-
-const impacts = [
-  {
-    value: "16%",
-    text: "Improvement in measured leadership scores across 18 World Bank cohorts",
-  },
-  {
-    value: "$161M",
-    text: "Afghanistan portfolio led to on-time operational closeout",
-  },
-  {
-    value: "43%",
-    text: "Reduction in predicted gun violence over three months in Portland",
-  },
-  {
-    value: "8",
-    text: "Fragile- and conflict-affected countries advised at senior leadership level",
-  },
 ];
 
 export default function WhyAndImpact() {
@@ -38,7 +20,7 @@ export default function WhyAndImpact() {
           <div className="w-full lg:w-1/3 pr-0 lg:pr-12 mb-16 lg:mb-0">
             <div className="flex flex-col items-start space-y-4 mb-8">
               <span className="text-gold text-xs font-semibold tracking-[0.2em] uppercase">
-                Why Clients Bring Us In
+                Patterns I help clients identify and navigate.
               </span>
               <div className="w-12 h-[2px] bg-gold/60"></div>
             </div>
@@ -49,7 +31,7 @@ export default function WhyAndImpact() {
               transition={{ duration: 0.8 }}
               className="font-serif text-4xl md:text-5xl lg:text-6xl leading-tight tracking-tight text-charcoal"
             >
-              Patterns we help clients move through.
+              Patterns I help clients identify and navigate.
             </motion.h2>
           </div>
 
@@ -103,7 +85,7 @@ export default function WhyAndImpact() {
 
           {/* Right Grid */}
           <div className="w-full lg:w-3/4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-12 lg:gap-y-0">
-            {impacts.map((impact, index) => (
+            {homeImpactStats.map((impact, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 30 }}

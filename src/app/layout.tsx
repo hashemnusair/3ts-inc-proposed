@@ -15,14 +15,14 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: "3Ts Consulting — Senior Advisory for Complex Leadership Moments",
+  title: "3Ts Consulting — Senior Advisory for High-Stakes Alignment",
   description:
-    "3Ts works with sponsors and senior leaders of transformations, reforms, and consequential leadership transitions across governments, multilaterals, and private-sector organizations.",
+    "Senior advisory for high-stakes alignment in transformation settings across the MENA region and complex environments.",
   metadataBase: new URL("https://3ts-inc-proposed.pages.dev"),
   openGraph: {
-    title: "3Ts Consulting — Senior Advisory for Complex Leadership Moments",
+    title: "3Ts Consulting — Senior Advisory for High-Stakes Alignment",
     description:
-      "Private advisory for governments, multilaterals, sovereign-backed institutions, family enterprises, and large private-sector organizations.",
+      "Senior advisory for high-stakes alignment in transformation settings.",
     url: "https://3ts-inc-proposed.pages.dev",
     siteName: "3Ts Consulting",
     images: [
@@ -38,9 +38,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "3Ts Consulting — Senior Advisory for Complex Leadership Moments",
+    title: "3Ts Consulting — Senior Advisory for High-Stakes Alignment",
     description:
-      "Private advisory for governments, multilaterals, sovereign-backed institutions, family enterprises, and large private-sector organizations.",
+      "Senior advisory for high-stakes alignment in transformation settings.",
     images: ["/og/home.webp"],
   },
 };

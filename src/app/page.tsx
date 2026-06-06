@@ -11,9 +11,9 @@ import ImageBreak from "@/components/ImageBreak";
 import { pageMetadata } from "@/lib/metadata";
 
 export const metadata = pageMetadata({
-  title: "3Ts Consulting — Senior Advisory for Complex Leadership Moments",
+  title: "3Ts Consulting — Senior Advisory for High-Stakes Alignment",
   description:
-    "Private advisory for sponsors and senior leaders navigating complex alignment, reform, and consequential leadership transitions.",
+    "Senior advisory for sponsors navigating high-stakes alignment, consequential rooms, and transformation settings.",
   path: "/",
   image: "/og/home.webp",
 });

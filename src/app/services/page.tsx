@@ -82,6 +82,8 @@ export default function ServicesPage() {
         </div>
       </section>
 
+      <WhatWeDo />
+
       <section className="w-full bg-[#111613] px-6 py-20 md:px-16 lg:px-24">
         <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[0.72fr_1fr] lg:items-center">
           <div className="relative h-[440px] overflow-hidden bg-charcoal shadow-[0_24px_70px_-30px_rgba(0,0,0,0.5)] md:h-[560px]">
@@ -119,8 +121,6 @@ export default function ServicesPage() {
           </div>
         </div>
       </section>
-
-      <WhatWeDo />
       <Footer />
     </main>
   );

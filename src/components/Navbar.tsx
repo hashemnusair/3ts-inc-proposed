@@ -4,6 +4,7 @@ import { useState, useEffect, useLayoutEffect } from "react";
 import type { MouseEvent } from "react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
+import type { Variants } from "framer-motion";
 import { usePathname, useRouter } from "next/navigation";
 
 const links = [
@@ -15,7 +16,7 @@ const links = [
   { href: "/contact", label: "Contact" },
 ];
 
-const menuVariants: any = {
+const menuVariants: Variants = {
   closed: {
     opacity: 0,
     y: "-100%",
@@ -34,7 +35,7 @@ const menuVariants: any = {
   },
 };
 
-const linkContainerVariants: any = {
+const linkContainerVariants: Variants = {
   closed: {
     transition: {
       staggerChildren: 0.05,
@@ -49,7 +50,7 @@ const linkContainerVariants: any = {
   },
 };
 
-const linkVariants: any = {
+const linkVariants: Variants = {
   closed: { opacity: 0, y: 20 },
   open: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
 };
@@ -76,8 +77,11 @@ export default function Navbar() {
 
   // Close menu on route change
   useEffect(() => {
-    setIsOpen(false);
-    setIsMenuNavigating(false);
+    const frame = window.requestAnimationFrame(() => {
+      setIsOpen(false);
+      setIsMenuNavigating(false);
+    });
+    return () => window.cancelAnimationFrame(frame);
   }, [pathname]);
 
   // Prevent scrolling when menu is open
@@ -154,9 +158,6 @@ export default function Navbar() {
             <Link href="/" className="flex flex-col z-[70]">
               <span className={`site-nav-brand font-serif text-2xl md:text-3xl tracking-tight ${brandToneClass}`}>
                 3Ts Consulting
-              </span>
-              <span className="font-sans text-[10px] md:text-xs tracking-widest text-gold mt-1 uppercase">
-                Thoroughly. Thought. Through.
               </span>
             </Link>
             <div className={`site-nav-divider hidden md:block w-px h-10 ${dividerToneClass}`}></div>

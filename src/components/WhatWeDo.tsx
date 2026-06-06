@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import type { Variants } from "framer-motion";
 import Link from "next/link";
 
 const engagements = [
@@ -8,13 +9,13 @@ const engagements = [
     number: "01",
     title: "Alignment Read",
     description:
-      "A two-week senior diagnostic. Confidential interviews with the principals and key stakeholders, a map of where alignment is breaking, and a sponsor memo on what is actually at stake and what should happen next. Often the first engagement.",
+      "A two-week senior diagnostic. Confidential interviews with the principals and key stakeholders, a map of where alignment is breaking, and a candid sponsor memo on what is at stake and what should happen next. Often the first engagement.",
   },
   {
     number: "02",
     title: "Decision Sprint",
     description:
-      "A four-to-six-week engagement built around a specific stalled decision or consequential convening. Stakeholder preparation, decision architecture, the room itself, and a thirty-day decision tracker once the alignment is reached.",
+      "A four-to-six-week engagement built around a significant decision or a consequential convening. Stakeholder preparation, decision architecture, the room itself, and a thirty-day follow-through to ensure decisions made in the room translate into action.",
   },
   {
     number: "03",
@@ -38,7 +39,7 @@ const containerVariants = {
   },
 };
 
-const cardVariants: any = {
+const cardVariants: Variants = {
   hidden: { opacity: 0, y: 30 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: "easeOut" } },
 };
@@ -61,7 +62,7 @@ export default function WhatWeDo() {
           transition={{ duration: 0.8 }}
           className="font-serif text-4xl md:text-5xl lg:text-6xl leading-tight tracking-tight text-charcoal max-w-4xl mb-20"
         >
-          Our work is organized around four engagements, each designed for a
+          The work is organized around four engagements, each designed for a
           different stage of the alignment problem.
         </motion.h2>
 

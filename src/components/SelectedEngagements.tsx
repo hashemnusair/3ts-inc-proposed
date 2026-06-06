@@ -105,7 +105,7 @@ export default function SelectedEngagements() {
           transition={{ duration: 0.8 }}
           className="font-serif text-5xl md:text-6xl lg:text-7xl leading-tight tracking-tight text-charcoal mb-6"
         >
-          Most of our work <br className="hidden md:block" />
+          Most of this work <br className="hidden md:block" />
           is confidential.
         </motion.h2>
 

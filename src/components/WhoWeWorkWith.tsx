@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import type { Variants } from "framer-motion";
 import {
   Bank,
   Globe,
@@ -9,7 +10,7 @@ import {
   Buildings,
 } from "@phosphor-icons/react";
 
-const listVariants: any = {
+const listVariants: Variants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
@@ -19,7 +20,7 @@ const listVariants: any = {
   },
 };
 
-const itemVariants: any = {
+const itemVariants: Variants = {
   hidden: { opacity: 0, x: 20 },
   visible: { opacity: 1, x: 0, transition: { duration: 0.6, ease: "easeOut" } },
 };

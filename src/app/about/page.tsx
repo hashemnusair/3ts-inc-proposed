@@ -6,173 +6,214 @@ import { pageMetadata } from "@/lib/metadata";
 export const metadata = pageMetadata({
   title: "About Shareef Khatib — 3Ts Consulting",
   description:
-    "Shareef Khatib is a senior facilitator, organizational development practitioner, and executive coach with 18+ years across complex international contexts.",
+    "Shareef Samir Khatib is a senior adviser for high-stakes alignment in transformation settings.",
   path: "/about",
   image: "/og/about.webp",
 });
 
-const credibility = [
-  ["18+", "years of international experience"],
-  ["$27M-$161M", "multi-country portfolios led"],
-  ["18", "World Bank leadership cohorts delivered"],
-  ["8", "fragile and conflict-affected countries advised"],
+const competencies = [
+  "High-Stakes Stakeholder Alignment",
+  "Politically Sensitive Convening & Decision Architecture",
+  "Executive Sponsor Coaching & Transition Advisory",
+  "Organisational Diagnosis & Change Design",
+  "Crisis Navigation & Continuity Leadership",
+  "Cross-Cultural & Intercultural Judgment",
 ];
 
-const competencies = [
-  "Facilitation & Convening Design",
-  "Multi-Stakeholder Dialogue in Politically Sensitive Contexts",
-  "Strategic Reviews & Planning Sprints",
-  "Executive Coaching",
-  "Organizational Development & Change Leadership",
-  "Operating Model & Process Redesign",
-  "Inclusive Leadership & Psychological Safety",
-  "Risk & Crisis Management",
+const credentials = [
+  "World Bank facilitator and trainer roster member",
+  "Georgetown University — Certificate in Leadership Coaching; Certificate in Organisational Development & Change Leadership",
+  "Project Management Professional (PMP)",
+  "Advanced degrees in Governance & International Development and Behavioural Neuroscience",
+  "20+ countries of professional experience across the Middle East, Africa, Asia, and beyond",
 ];
 
 export default function AboutPage() {
   return (
     <main className="flex min-h-screen flex-col bg-cream text-charcoal">
       <Navbar />
-      <section className="w-full py-28 md:py-32 px-6 md:px-16 lg:px-24">
-        <div className="max-w-7xl mx-auto grid lg:grid-cols-[minmax(0,1.05fr)_minmax(360px,0.75fr)] gap-16 lg:gap-20 items-start">
+
+      <section className="w-full px-6 py-28 md:px-16 md:py-32 lg:px-24">
+        <div className="mx-auto grid max-w-7xl items-start gap-16 lg:grid-cols-[minmax(0,1fr)_minmax(360px,0.72fr)] lg:gap-20">
           <div>
-            <div className="flex flex-col items-start space-y-4 mb-8">
-              <span className="text-gold text-xs font-semibold tracking-[0.2em] uppercase">
+            <div className="mb-8 flex flex-col items-start space-y-4">
+              <span className="text-xs font-semibold uppercase tracking-[0.2em] text-gold">
                 About Shareef
               </span>
-              <div className="w-12 h-[2px] bg-gold/60"></div>
+              <div className="h-[2px] w-12 bg-gold/60" />
             </div>
-            <h1 className="w-full max-w-[20rem] md:max-w-none font-serif text-4xl md:text-6xl lg:text-7xl leading-tight tracking-tight text-charcoal mb-10">
+
+            <h1 className="mb-8 font-serif text-5xl leading-tight tracking-tight text-charcoal md:text-7xl">
               Shareef Samir Khatib
             </h1>
-            <h2 className="w-full max-w-[20rem] md:max-w-none text-xl md:text-2xl font-serif text-charcoal/80 mb-12 italic leading-relaxed">
-              Senior Facilitator | Organizational Development Practitioner | Executive Coach
-            </h2>
-            <div className="w-full max-w-[20rem] md:max-w-none prose prose-lg prose-headings:font-serif prose-headings:text-charcoal prose-p:text-charcoal/70 prose-strong:text-charcoal">
-              <p className="lead text-xl mb-8">
-                Senior facilitator, OD practitioner, and executive coach with
-                18+ years of international experience convening diverse actors
-                around complex, high-stakes challenges in politically sensitive
-                environments.
+            <p className="mb-12 max-w-2xl font-serif text-2xl italic leading-snug text-charcoal/78 md:text-3xl">
+              Senior adviser for high-stakes alignment in transformation settings.
+            </p>
+
+            <div className="max-w-3xl space-y-7 text-lg leading-relaxed text-charcoal/72">
+              <p>
+                I work with senior sponsors navigating the hardest part of
+                transformation: getting the right people aligned around
+                difficult decisions, and ensuring those decisions survive contact
+                with reality. My work is most useful when the issue is
+                politically sensitive, cross-functional, or stuck between
+                strategy and execution: where ordinary workshops and generic
+                facilitation are not enough.
               </p>
-              <p className="mb-8">
-                Authority gained in having led multi-country portfolios
-                ($27M-$161M) across the Middle East, North Africa,
-                Sub-Saharan Africa, and South/Southeast Asia, holding
-                responsibility for outcomes and the stakeholders affected by
-                them. British and Jordanian national; Arabic and French speaker;
-                experienced working across the Arab world and other
-                Muslim-majority and fragile contexts.
+              <p>
+                My position is grounded in eighteen years of senior operating
+                experience, not in method training. As senior program director
+                and principal adviser across Nigeria, Malaysia, Iraq,
+                Afghanistan, Turkey and Syria, I held direct accountability for
+                multi-country portfolios ranging from $27M to $161M, and for
+                the governments, communities, and institutions those portfolios
+                were designed to serve. The rooms I worked in were
+                consequential. The decisions made in them had costs measured in
+                lives and livelihoods. This experience is what grounds my
+                advisory practice.
               </p>
             </div>
           </div>
 
           <aside className="lg:sticky lg:top-32">
-            <div className="relative h-[480px] md:h-[560px] bg-charcoal overflow-hidden shadow-[0_24px_70px_-28px_rgba(0,0,0,0.24)]">
+            <div className="relative h-[500px] overflow-hidden bg-charcoal shadow-[0_24px_70px_-28px_rgba(0,0,0,0.24)] md:h-[620px]">
               <Image
                 src="/shareef-khatib.webp"
                 alt="Shareef Samir Khatib"
                 fill
                 priority
-                className="object-cover grayscale contrast-110 brightness-95"
+                className="object-cover object-[center_28%] grayscale contrast-110 brightness-95"
                 sizes="(min-width: 1024px) 38vw, 100vw"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-charcoal/65 via-transparent to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-charcoal/72 via-transparent to-transparent" />
               <div className="absolute bottom-8 left-8 right-8">
-                <p className="text-cream font-serif text-2xl leading-snug">
-                  Quiet judgment for rooms where trust is fragile and decisions matter.
+                <p className="font-serif text-2xl leading-snug text-cream">
+                  Quiet judgment for rooms where trust is fragile and decisions
+                  matter.
                 </p>
               </div>
-            </div>
-            <div className="grid grid-cols-2 gap-px bg-charcoal/10 border-x border-b border-charcoal/10">
-              {credibility.map(([value, label]) => (
-                <div key={value} className="bg-[#f8f6f2] p-5">
-                  <div className="font-serif text-2xl text-charcoal mb-2">
-                    {value}
-                  </div>
-                  <div className="text-[10px] uppercase tracking-[0.16em] leading-relaxed text-charcoal/55">
-                    {label}
-                  </div>
-                </div>
-              ))}
             </div>
           </aside>
         </div>
       </section>
 
-      <section className="w-full bg-[#f8f6f2] py-24 px-6 md:px-16 lg:px-24 border-y border-[#edebe4]">
-        <div className="max-w-7xl mx-auto grid lg:grid-cols-[0.7fr_1fr] gap-16">
+      <section className="w-full border-y border-[#edebe4] bg-[#f8f6f2] px-6 py-24 md:px-16 lg:px-24">
+        <div className="mx-auto grid max-w-7xl gap-14 lg:grid-cols-[0.68fr_1fr]">
           <div>
-            <div className="flex flex-col items-start space-y-4 mb-8">
-              <span className="text-gold text-xs font-semibold tracking-[0.2em] uppercase">
-                Practice
-              </span>
-              <div className="w-12 h-[2px] bg-gold/60"></div>
-            </div>
-            <h2 className="font-serif text-4xl md:text-5xl leading-tight tracking-tight text-charcoal">
-              A practice built on accountability and trust.
+            <span className="mb-6 block text-xs font-semibold uppercase tracking-[0.2em] text-gold">
+              On working in the region
+            </span>
+            <h2 className="font-serif text-4xl leading-tight text-charcoal md:text-5xl">
+              Trust is built differently here.
             </h2>
           </div>
+          <p className="max-w-3xl text-lg leading-relaxed text-charcoal/72">
+            I am British and Jordanian — formed by both worlds and comfortable
+            operating across them. I work across the Arab world and other
+            Muslim-majority and complex environments in English, with
+            conversational Arabic and French, and with the cultural literacy
+            that comes from having lived and worked across the region. I
+            understand that trust is built differently here: through discretion,
+            through demonstrated judgment, and through the patience to let a
+            relationship earn its own authority before claiming any.
+          </p>
+        </div>
+      </section>
 
-          <div className="space-y-8 text-charcoal/70 text-lg leading-relaxed">
+      <section className="w-full px-6 py-24 md:px-16 lg:px-24">
+        <div className="mx-auto grid max-w-7xl gap-14 lg:grid-cols-[0.68fr_1fr]">
+          <div>
+            <span className="mb-6 block text-xs font-semibold uppercase tracking-[0.2em] text-gold">
+              On how I work
+            </span>
+            <h2 className="font-serif text-4xl leading-tight text-charcoal md:text-5xl">
+              Disciplined, calm, and highly engaged with content.
+            </h2>
+          </div>
+          <div className="space-y-7 text-lg leading-relaxed text-charcoal/72">
             <p>
-              3Ts Consulting offers confidential support for sponsors, repeated
-              convenings, principal coaching, and judgment between formal
-              moments. The practice is grounded in real-world operational
-              leadership: Chief of Party roles, complex governance portfolios,
-              crisis continuity, and senior stakeholder engagement across public,
-              multilateral, nonprofit, and private-sector settings.
+              As I demonstrate in Approach, I am disciplined, calm, and highly
+              engaged with content. I listen for the narratives beneath
+              positions, draw out the connections no one has yet made visible,
+              and play back synthesis with precision — so that senior teams can
+              make informed choices and leave with decisions that hold. I hold
+              the room with respect and authority, encouraging candid and at
+              times provocative exchange while maintaining the cohesion that
+              makes decisions possible.
             </p>
             <p>
-              Shareef is disciplined, calm, and highly engaged with content. He
-              listens for underlying narratives, draws out connections across
-              disparate viewpoints, and plays back synthesis to help senior teams
-              make informed choices while maintaining cohesion and dignity.
-            </p>
-            <p className="font-serif text-2xl md:text-3xl text-charcoal leading-snug">
-              The deeper aim is practical and human: contributing to a world
-              where collaboration, cooperation, and kindness can thrive.
+              The work starts long before the meeting does. Upstream diagnosis,
+              stakeholder mapping, sponsor preparation, and agenda architecture
+              are where most alignment problems are actually solved — or lost.
+              By the time the room begins, the work is already well underway.
             </p>
           </div>
         </div>
       </section>
 
-      <section className="w-full py-24 px-6 md:px-16 lg:px-24">
-        <div className="max-w-7xl mx-auto grid lg:grid-cols-[0.75fr_1fr] gap-16">
-          <div>
-            <div className="flex flex-col items-start space-y-4 mb-8">
-              <span className="text-gold text-xs font-semibold tracking-[0.2em] uppercase">
-                Core Competencies
-              </span>
-              <div className="w-12 h-[2px] bg-gold/60"></div>
-            </div>
-            <h2 className="font-serif text-4xl md:text-5xl leading-tight tracking-tight text-charcoal">
-              Support for the moments that shape what happens next.
-            </h2>
-          </div>
+      <section className="w-full bg-[#111613] px-6 py-24 text-cream md:px-16 lg:px-24">
+        <div className="mx-auto max-w-5xl">
+          <p className="mb-8 text-xs font-semibold uppercase tracking-[0.2em] text-gold">
+            Independent judgment, offered without self-interest.
+          </p>
+          <p className="font-serif text-3xl leading-snug md:text-5xl">
+            Senior leaders are rarely short of agreement. What they often lack
+            is a trusted adviser who will name what others in the room will not
+            — not to provoke, but because clear decisions require honest
+            premises.
+          </p>
+          <p className="mt-10 max-w-3xl text-lg leading-relaxed text-cream/68">
+            I work without an agenda of my own. My interest is in my client&apos;s
+            success and the quality of their decisions. That independence is
+            what makes my honesty useful: it is not flattery, and it is not
+            criticism. It is a precise read of the situation, offered with
+            respect and without self-interest.
+          </p>
+        </div>
+      </section>
 
-          <div className="grid md:grid-cols-2 gap-px bg-charcoal/10 border border-charcoal/10">
-            {competencies.map((item) => (
-              <div key={item} className="bg-cream p-6">
-                <p className="font-serif text-xl text-charcoal leading-snug">
+      <section className="w-full px-6 py-24 md:px-16 lg:px-24">
+        <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-2">
+          <div>
+            <span className="mb-6 block text-xs font-semibold uppercase tracking-[0.2em] text-gold">
+              Core Competencies
+            </span>
+            <div className="grid gap-px border border-charcoal/10 bg-charcoal/10 md:grid-cols-2">
+              {competencies.map((item) => (
+                <div key={item} className="bg-cream p-6">
+                  <p className="font-serif text-xl leading-snug text-charcoal">
+                    {item}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+          <div>
+            <span className="mb-6 block text-xs font-semibold uppercase tracking-[0.2em] text-gold">
+              Credentials
+            </span>
+            <div className="space-y-4 border-l border-gold/40 pl-6">
+              {credentials.map((item) => (
+                <p key={item} className="text-lg leading-relaxed text-charcoal/72">
                   {item}
                 </p>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Shareef's Quote */}
-      <section className="w-full bg-[#111613] py-24 px-6 md:px-16 lg:px-24">
-        <div className="max-w-3xl mx-auto text-center">
-          <div className="font-serif text-5xl text-gold/40 mb-6">&ldquo;</div>
-          <blockquote className="font-serif text-2xl md:text-3xl lg:text-4xl text-cream leading-snug tracking-tight mb-8">
-            I hope that together we can contribute to a world where collaboration, cooperation, and kindness thrive.
-          </blockquote>
-          <div className="w-12 h-[2px] bg-gold/60 mx-auto mb-6"></div>
-          <p className="text-gold text-sm tracking-[0.2em] uppercase font-semibold">
-            Shareef Samir Khatib
+      <section className="w-full border-t border-[#edebe4] bg-[#f8f6f2] px-6 py-24 text-center md:px-16 lg:px-24">
+        <div className="mx-auto max-w-4xl">
+          <p className="font-serif text-3xl leading-snug text-charcoal md:text-5xl">
+            The work is advisory. The purpose is consequential: decisions that
+            hold, institutions that deliver, and communities that shape their
+            own futures.
+          </p>
+          <div className="mx-auto my-10 h-px w-16 bg-gold/60" />
+          <p className="font-serif text-2xl italic text-charcoal/76">
+            Quiet judgment for rooms where trust is fragile and decisions
+            matter.
           </p>
         </div>
       </section>

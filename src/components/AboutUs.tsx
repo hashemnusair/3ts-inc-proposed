@@ -36,13 +36,13 @@ export default function AboutUs() {
             <p className="text-charcoal/70 text-base md:text-lg leading-relaxed">
               World Bank facilitator and trainer roster member.
               Georgetown-trained in Leadership Coaching and in Organizational
-              Development & Change Leadership. British and Jordanian; working
-              across the region in English, French, and Arabic.
+              Development & Change Leadership. British and Jordanian — formed
+              by both worlds and comfortable operating across them.
             </p>
             <p className="text-charcoal/70 text-base md:text-lg leading-relaxed">
-              The work is serious because the rooms are serious, but its purpose
-              remains human: better collaboration, more durable cooperation, and
-              the conditions where kindness can still thrive.
+              The work is advisory. The purpose is consequential: decisions that
+              hold, institutions that deliver, and communities that shape their
+              own futures.
             </p>
           </motion.div>
 
@@ -51,7 +51,7 @@ export default function AboutUs() {
               ["18+", "years across complex international contexts"],
               ["$161M", "largest portfolio led through closeout"],
               ["18", "World Bank leadership cohorts delivered"],
-              ["3", "working languages: English, French, Arabic"],
+              ["9", "Senior multi-stakeholder processes led in fragile, post-conflict, and reform environments — across governments, militaries, multilaterals, and civil society."],
             ].map(([value, label]) => (
               <div key={value} className="bg-[#f8f6f2] p-5">
                 <div className="font-serif text-3xl text-charcoal mb-2">
