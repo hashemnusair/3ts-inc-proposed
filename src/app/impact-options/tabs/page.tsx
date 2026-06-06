@@ -6,7 +6,7 @@ import { pageMetadata } from "@/lib/metadata";
 export const metadata = pageMetadata({
   title: "Impact Tabs Option — 3Ts Consulting",
   description:
-    "Tabbed impact page option for representative 3Ts Consulting cases.",
+    "A service-led version of the impact page for moving between the four offers.",
   path: "/impact-options/tabs",
   image: "/og/impact.webp",
 });

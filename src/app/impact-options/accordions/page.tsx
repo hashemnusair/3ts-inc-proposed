@@ -6,7 +6,7 @@ import { pageMetadata } from "@/lib/metadata";
 export const metadata = pageMetadata({
   title: "Impact Accordion Option — 3Ts Consulting",
   description:
-    "Accordion impact page option for representative 3Ts Consulting cases.",
+    "A compact version of the impact page that keeps each service area easy to scan.",
   path: "/impact-options/accordions",
   image: "/og/impact.webp",
 });

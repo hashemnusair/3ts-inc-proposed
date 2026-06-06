@@ -17,21 +17,21 @@ const options = [
     label: "Editorial",
     title: "Expanded editorial",
     description:
-      "All cases visible in one long-form proof page with sticky service navigation and strong result callouts.",
+      "Everything is open at once: the strongest format for reading the cases as a complete body of evidence.",
   },
   {
     href: "/impact-options/accordions",
     label: "Accordions",
     title: "Compact accordions",
     description:
-      "A tighter review format that lets Shareef open one service category at a time while keeping every case available.",
+      "A more focused read, with each service area opening on its own while the full case material stays close at hand.",
   },
   {
     href: "/impact-options/tabs",
     label: "Tabs",
     title: "Tabbed service view",
     description:
-      "A service-by-service comparison mode with one category foregrounded at a time.",
+      "A service-led layout for moving between the four offers without losing the wider impact story.",
   },
 ];
 

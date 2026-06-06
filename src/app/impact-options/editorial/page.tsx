@@ -6,7 +6,7 @@ import { pageMetadata } from "@/lib/metadata";
 export const metadata = pageMetadata({
   title: "Impact Editorial Option — 3Ts Consulting",
   description:
-    "Expanded editorial impact page option for representative 3Ts Consulting cases.",
+    "A full, open version of the impact page with the cases laid out for direct reading.",
   path: "/impact-options/editorial",
   image: "/og/impact.webp",
 });

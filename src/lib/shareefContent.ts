@@ -152,7 +152,7 @@ export const impactSections = [
       {
         title: "Cross-bureau alignment — Portland, USA.",
         body:
-          "A city administration facing an anticipated surge in gun violence needed to align multiple government departments, community partners, and city leadership around a shared response framework. The process converted bureau-level resistance into shared accountability and tangible results within 3 months:",
+          "A city administration facing an anticipated surge in gun violence needed to align multiple government departments,, community partners, and city leadership around a shared response framework. The process converted bureau-level resistance into shared accountability and tangible results within 3 months:",
         results: [
           "43% actual reduction in gun violence over three months",
           "24% reduction in homicides over the same period",

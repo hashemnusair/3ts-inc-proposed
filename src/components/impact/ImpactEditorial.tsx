@@ -1,32 +1,10 @@
-import { impactIntro, impactQualifier, impactSections } from "@/lib/shareefContent";
+import { impactSections } from "@/lib/shareefContent";
+import ImpactHeader from "@/components/impact/ImpactHeader";
 
 export default function ImpactEditorial() {
   return (
     <>
-      <section className="w-full bg-[#f8f6f2] px-6 py-32 md:px-16 lg:px-24">
-        <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[0.72fr_1fr]">
-          <div>
-            <div className="mb-8 flex flex-col items-start space-y-4">
-              <span className="text-xs font-semibold uppercase tracking-[0.2em] text-gold">
-                Impact
-              </span>
-              <div className="h-[2px] w-12 bg-gold/60" />
-            </div>
-            <h1 className="font-serif text-5xl leading-tight tracking-tight text-charcoal md:text-7xl">
-              Representative cases, organised by the problem they addressed.
-            </h1>
-          </div>
-
-          <div className="self-end space-y-8">
-            <p className="font-serif text-2xl italic leading-relaxed text-charcoal/82">
-              {impactIntro}
-            </p>
-            <p className="text-lg leading-relaxed text-charcoal/72">
-              {impactQualifier}
-            </p>
-          </div>
-        </div>
-      </section>
+      <ImpactHeader />
 
       <section className="w-full px-6 py-10 md:px-16 lg:px-24">
         <div className="mx-auto max-w-7xl">

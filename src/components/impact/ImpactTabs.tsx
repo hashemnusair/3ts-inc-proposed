@@ -1,42 +1,24 @@
 "use client";
 
 import { useState } from "react";
-import { impactIntro, impactQualifier, impactSections } from "@/lib/shareefContent";
+import { impactSections } from "@/lib/shareefContent";
+import ImpactHeader from "@/components/impact/ImpactHeader";
 
 export default function ImpactTabs() {
   const [activeId, setActiveId] = useState(impactSections[0]?.id ?? "");
 
   return (
     <>
-      <section className="w-full px-6 py-32 md:px-16 lg:px-24">
-        <div className="mx-auto max-w-7xl">
-          <span className="mb-8 block text-xs font-semibold uppercase tracking-[0.2em] text-gold">
-            Impact
-          </span>
-          <div className="grid gap-12 lg:grid-cols-[0.9fr_0.8fr]">
-            <h1 className="font-serif text-5xl leading-tight tracking-tight text-charcoal md:text-7xl">
-              Choose the service lens. Keep the full case record.
-            </h1>
-            <div className="self-end space-y-8">
-              <p className="font-serif text-2xl italic leading-relaxed text-charcoal/82">
-                {impactIntro}
-              </p>
-              <p className="text-lg leading-relaxed text-charcoal/72">
-                {impactQualifier}
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
+      <ImpactHeader />
 
       <section className="w-full px-6 pb-28 md:px-16 lg:px-24">
         <div className="mx-auto max-w-7xl">
           <div
             role="tablist"
             aria-label="Impact services"
-            className="grid gap-px overflow-hidden border border-charcoal/10 bg-charcoal/10 md:grid-cols-4"
+            className="grid gap-3 border border-charcoal/10 bg-[#f8f6f2] p-3 shadow-[0_24px_70px_-58px_rgba(0,0,0,0.34)] sm:grid-cols-2 md:grid-cols-4"
           >
-            {impactSections.map((section) => {
+            {impactSections.map((section, index) => {
               const isActive = section.id === activeId;
               return (
                 <button
@@ -45,13 +27,29 @@ export default function ImpactTabs() {
                   role="tab"
                   aria-selected={isActive}
                   onClick={() => setActiveId(section.id)}
-                  className={`px-4 py-5 text-left text-[10px] font-semibold uppercase tracking-[0.16em] transition-colors ${
+                  className={`group relative flex min-h-[96px] flex-col items-center justify-center gap-3 overflow-hidden border px-4 py-5 text-center transition-all duration-300 ${
                     isActive
-                      ? "bg-[#111613] text-cream"
-                      : "bg-cream text-charcoal/62 hover:bg-[#f8f6f2] hover:text-gold"
+                      ? "border-[#111613] bg-[#111613] text-cream shadow-[0_18px_34px_-26px_rgba(0,0,0,0.65)]"
+                      : "border-charcoal/10 bg-cream text-charcoal/66 hover:-translate-y-0.5 hover:border-gold/50 hover:bg-white hover:text-charcoal"
                   }`}
                 >
-                  {section.eyebrow}
+                  <span
+                    className={`font-serif text-2xl leading-none ${
+                      isActive ? "text-gold" : "text-gold/74"
+                    }`}
+                  >
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
+                  <span className="max-w-[12rem] text-[10px] font-semibold uppercase leading-relaxed tracking-[0.16em]">
+                    {section.eyebrow}
+                  </span>
+                  <span
+                    className={`absolute inset-x-5 bottom-0 h-0.5 transition-all duration-300 ${
+                      isActive
+                        ? "bg-gold"
+                        : "bg-gold/0 group-hover:bg-gold/45"
+                    }`}
+                  />
                 </button>
               );
             })}
