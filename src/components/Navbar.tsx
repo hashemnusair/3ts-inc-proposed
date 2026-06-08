@@ -6,6 +6,8 @@ import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import type { Variants } from "framer-motion";
 import { usePathname, useRouter } from "next/navigation";
+import Image from "next/image";
+import { useBrand } from "@/components/brand/BrandProvider";
 
 const links = [
   { href: "/about", label: "About" },
@@ -65,6 +67,7 @@ function isPastHeroTop() {
 }
 
 export default function Navbar() {
+  const brand = useBrand();
   const [isOpen, setIsOpen] = useState(false);
   const [isMenuNavigating, setIsMenuNavigating] = useState(false);
   const [shouldAnimateIntro] = useState(() => !hasPlayedNavIntro);
@@ -118,14 +121,15 @@ export default function Navbar() {
     };
   }, []);
 
-  const isHome = pathname === "/";
+  const isHome = pathname === brand.href("/");
   const navIsTransparent = isHome && !scrolled && !isOpen && !isMenuNavigating;
   const navToneClass = navIsTransparent ? "text-white/80" : "text-charcoal/80";
   const brandToneClass = navIsTransparent ? "text-white" : "text-charcoal";
   const dividerToneClass = navIsTransparent ? "bg-white/20" : "bg-charcoal/20";
 
   const handleMobileNavClick = (event: MouseEvent<HTMLAnchorElement>, href: string) => {
-    if (href === pathname) {
+    const targetHref = brand.href(href);
+    if (targetHref === pathname) {
       setIsOpen(false);
       setIsMenuNavigating(false);
       return;
@@ -133,7 +137,7 @@ export default function Navbar() {
 
     event.preventDefault();
     setIsMenuNavigating(true);
-    router.push(href);
+    router.push(targetHref);
   };
 
   return (
@@ -155,9 +159,27 @@ export default function Navbar() {
           className="w-full px-6 md:px-12 py-6 flex items-center justify-between"
         >
           <div className="flex items-center space-x-6">
-            <Link href="/" className="flex flex-col z-[70]">
+            <Link href={brand.href("/")} className="flex items-center gap-3 z-[70]">
+              {brand.logoSrc ? (
+                <span className="relative h-10 w-10 overflow-hidden border border-current/10">
+                  <Image
+                    src={brand.logoSrc}
+                    alt={brand.logoAlt ?? brand.name}
+                    fill
+                    sizes="40px"
+                    className="object-cover"
+                  />
+                </span>
+              ) : null}
+              <span className="flex flex-col">
               <span className={`site-nav-brand font-serif text-2xl md:text-3xl tracking-tight ${brandToneClass}`}>
-                3Ts Consulting
+                {brand.name}
+              </span>
+              {brand.arabicName ? (
+                <span className={`site-nav-brand mt-1 text-[10px] font-semibold uppercase tracking-[0.18em] ${brandToneClass}`}>
+                  {brand.arabicName}
+                </span>
+              ) : null}
               </span>
             </Link>
             <div className={`site-nav-divider hidden md:block w-px h-10 ${dividerToneClass}`}></div>
@@ -166,14 +188,14 @@ export default function Navbar() {
           {/* Desktop Links */}
           <nav className={`site-nav-tone hidden md:flex items-center space-x-8 text-sm font-medium tracking-widest uppercase ${navToneClass}`}>
             {links.slice(0, 5).map((link) => {
-              const isActive = pathname === link.href;
+              const isActive = pathname === brand.href(link.href);
 
               return (
                 <Link
                   key={link.href}
-                  href={link.href}
-                  aria-current={isActive ? "page" : undefined}
-                  data-active={isActive ? "true" : undefined}
+                  href={brand.href(link.href)}
+                  aria-current={pathname === brand.href(link.href) ? "page" : undefined}
+                  data-active={pathname === brand.href(link.href) ? "true" : undefined}
                   className={`premium-track ${isActive ? "text-gold" : "hover:text-gold"}`}
                 >
                   {link.label}
@@ -186,11 +208,11 @@ export default function Navbar() {
           <div className="hidden md:flex items-center space-x-6">
             <div className={`site-nav-divider w-px h-10 ${dividerToneClass}`}></div>
             <Link
-              href="/contact"
-              aria-current={pathname === "/contact" ? "page" : undefined}
-              data-active={pathname === "/contact" ? "true" : undefined}
+              href={brand.href("/contact")}
+              aria-current={pathname === brand.href("/contact") ? "page" : undefined}
+              data-active={pathname === brand.href("/contact") ? "true" : undefined}
               className={`premium-track text-sm font-medium tracking-widest uppercase ${
-                pathname === "/contact"
+                pathname === brand.href("/contact")
                   ? "text-gold"
                   : `hover:text-gold ${navToneClass}`
               }`}
@@ -260,7 +282,7 @@ export default function Navbar() {
               {links.map((link) => (
                 <motion.div key={link.href} variants={linkVariants}>
                   <Link
-                    href={link.href}
+                    href={brand.href(link.href)}
                     onClick={(event) => handleMobileNavClick(event, link.href)}
                     className="font-serif text-4xl text-charcoal hover:text-gold transition-colors inline-block relative group"
                   >

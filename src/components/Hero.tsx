@@ -3,8 +3,11 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
+import { useBrand } from "@/components/brand/BrandProvider";
 
 export default function Hero() {
+  const brand = useBrand();
+
   return (
     <section className="relative w-full min-h-[calc(100vh-96px)] flex flex-col overflow-hidden">
       {/* Full Background Image — responsive */}
@@ -48,7 +51,7 @@ export default function Hero() {
             Transformations stall when the people who must implement a decision are not yet aligned around it, or aren’t even present. I work with senior sponsors in the MENA region to convene and hold the rooms where that alignment is built, and to ensure the decisions made there survive contact with reality.
           </p>
 
-          <Link href="/contact" className="block w-full max-w-[20rem] sm:inline-block sm:w-auto sm:max-w-full">
+          <Link href={brand.href("/contact")} className="block w-full max-w-[20rem] sm:inline-block sm:w-auto sm:max-w-full">
             <button className="w-full sm:w-auto bg-white/10 backdrop-blur-sm border border-white/20 text-white px-5 md:px-8 py-4 text-xs md:text-sm tracking-[0.1em] md:tracking-widest uppercase font-medium hover:bg-white/20 transition-all transform hover:-translate-y-0.5 active:translate-y-0 whitespace-normal text-center leading-relaxed">
               Request a Confidential Conversation &rarr;
             </button>
@@ -63,11 +66,24 @@ export default function Hero() {
           className="mt-16 md:mt-24 flex items-start space-x-6 border-t border-white/15 pt-8 w-full max-w-[calc(100vw-3rem)] md:max-w-xl"
         >
           <div className="font-serif text-4xl text-gold shrink-0 italic pr-2 border-r border-white/15">
-            3<span className="text-3xl ml-0.5">T</span>
+            {brand.logoSrc ? (
+              <span className="relative block h-12 w-12 overflow-hidden">
+                <Image
+                  src={brand.logoSrc}
+                  alt={brand.logoAlt ?? brand.name}
+                  fill
+                  sizes="48px"
+                  className="object-cover"
+                />
+              </span>
+            ) : (
+              <>
+                3<span className="text-3xl ml-0.5">T</span>
+              </>
+            )}
           </div>
           <p className="text-sm text-white/50 leading-relaxed font-medium">
-            Senior advisory for high-stakes alignment in transformation
-            settings.
+            {brand.tagline}.
           </p>
         </motion.div>
       </div>

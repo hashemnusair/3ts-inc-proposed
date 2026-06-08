@@ -115,3 +115,91 @@ html[data-nav-at-top="true"] .site-nav[data-home="true"][data-menu-open="false"]
     transform: scaleX(1);
   }
 }
+
+.mawzun-full {
+  --color-cream: #fbf4e8;
+  --color-charcoal: #213737;
+  --color-gold: #d7ba83;
+  background: #fbf4e8;
+  color: #213737;
+}
+
+.mawzun-full .bg-cream,
+.mawzun-full .bg-\[\#f8f6f2\],
+.mawzun-full .bg-\[\#fcfbf9\],
+.mawzun-full .bg-\[\#faf8f4\],
+.mawzun-full .bg-white {
+  background-color: #fbf4e8 !important;
+}
+
+.mawzun-full .bg-charcoal,
+.mawzun-full .bg-\[\#111613\],
+.mawzun-full .bg-\[\#151a16\],
+.mawzun-full .bg-\[\#151a17\],
+.mawzun-full .bg-\[\#171d19\] {
+  background-color: #1f3635 !important;
+}
+
+.mawzun-full .site-nav:not([data-home="true"]),
+.mawzun-full .site-nav[data-home="false"] {
+  background-color: rgb(251 244 232 / 0.95) !important;
+}
+
+.mawzun-full .text-charcoal,
+.mawzun-full [class*="text-charcoal\/"] {
+  color: #213737 !important;
+}
+
+.mawzun-full .text-cream,
+.mawzun-full [class*="text-cream\/"],
+.mawzun-full footer .text-charcoal,
+.mawzun-full footer [class*="text-charcoal\/"] {
+  color: #fbf4e8 !important;
+}
+
+.mawzun-full .text-gold,
+.mawzun-full [class*="text-gold\/"],
+.mawzun-full .hover\:text-gold:hover {
+  color: #d7ba83 !important;
+}
+
+.mawzun-full .bg-gold,
+.mawzun-full [class*="bg-gold\/"] {
+  background-color: #d7ba83 !important;
+}
+
+.mawzun-full .border-charcoal\/5,
+.mawzun-full .border-charcoal\/10,
+.mawzun-full .border-\[\#edebe4\] {
+  border-color: rgb(33 55 55 / 0.14) !important;
+}
+
+.mawzun-full .border-cream\/10,
+.mawzun-full .border-white\/10,
+.mawzun-full .border-white\/15 {
+  border-color: rgb(251 244 232 / 0.14) !important;
+}
+
+.mawzun-full .border-gold,
+.mawzun-full .border-gold\/50,
+.mawzun-full .border-gold\/55,
+.mawzun-full .border-gold\/60 {
+  border-color: #d7ba83 !important;
+}
+
+.mawzun-full .shadow-\[0_24px_70px_-28px_rgba\(0\,0\,0\,0\.24\)\],
+.mawzun-full .shadow-\[0_24px_70px_-30px_rgba\(0\,0\,0\,0\.22\)\],
+.mawzun-full .shadow-\[0_24px_70px_-40px_rgba\(0\,0\,0\,0\.22\)\] {
+  box-shadow: 0 34px 90px -52px rgb(31 54 53 / 0.85) !important;
+}
+
+.mawzun-full .mawzun-preview-switcher {
+  background: rgb(31 54 53 / 0.94) !important;
+  border-color: rgb(251 244 232 / 0.14) !important;
+  color: #fbf4e8 !important;
+}
+
+.mawzun-full ::selection {
+  background-color: #d7ba83;
+  color: #1f3635;
+}

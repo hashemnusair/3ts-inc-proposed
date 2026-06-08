@@ -1,6 +1,11 @@
 "use client";
 
+import Image from "next/image";
+import { useBrand } from "@/components/brand/BrandProvider";
+
 export default function Footer() {
+  const brand = useBrand();
+
   return (
     <footer className="w-full bg-[#151a16] pt-16 pb-24 px-6 md:px-16 lg:px-24">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-start md:items-end justify-between border-t border-cream/10 pt-16">
@@ -23,14 +28,30 @@ export default function Footer() {
         </div>
 
         <div className="flex flex-col items-end text-right">
+          {brand.logoSrc ? (
+            <div className="relative mb-5 h-20 w-20 overflow-hidden border border-cream/10">
+              <Image
+                src={brand.logoSrc}
+                alt={brand.logoAlt ?? brand.name}
+                fill
+                sizes="80px"
+                className="object-cover"
+              />
+            </div>
+          ) : null}
           <div className="font-serif text-3xl text-cream mb-2">
-            3Ts Consulting
+            {brand.name}
           </div>
+          {brand.arabicName ? (
+            <div className="mb-3 text-xs font-semibold uppercase tracking-[0.2em] text-gold">
+              {brand.arabicName}
+            </div>
+          ) : null}
           <div className="max-w-xs text-cream/40 text-[10px] leading-relaxed tracking-[0.16em] uppercase mb-6">
-            Senior advisory for high-stakes alignment in transformation settings
+            {brand.tagline}
           </div>
           <div className="text-cream/40 text-xs tracking-widest uppercase">
-            &copy; {new Date().getFullYear()} 3Ts Consulting, Inc.
+            &copy; {new Date().getFullYear()} {brand.legalName}
           </div>
         </div>
       </div>

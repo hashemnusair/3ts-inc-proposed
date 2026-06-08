@@ -3,8 +3,11 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
+import { useBrand } from "@/components/brand/BrandProvider";
 
 export default function AboutUs() {
+  const brand = useBrand();
+
   return (
     <section className="w-full bg-[#f8f6f2] py-24 px-6 md:px-16 lg:px-24 border-t border-[#edebe4]">
       <div className="max-w-7xl mx-auto flex flex-col-reverse lg:flex-row items-center">
@@ -12,7 +15,7 @@ export default function AboutUs() {
         <div className="w-full lg:w-1/2 pr-0 lg:pr-16 mt-16 lg:mt-0 z-10">
           <div className="flex flex-col items-start space-y-4 mb-8">
             <span className="text-gold text-xs font-semibold tracking-[0.2em] uppercase">
-              About 3Ts
+              About {brand.shortName}
             </span>
             <div className="w-12 h-[2px] bg-gold/60"></div>
           </div>
@@ -25,7 +28,7 @@ export default function AboutUs() {
             className="space-y-6"
           >
             <p className="font-serif text-2xl md:text-3xl lg:text-4xl leading-snug text-charcoal">
-              3Ts Consulting is a private advisory practice led by Shareef Khatib.
+              {brand.name} is a private advisory practice led by Shareef Khatib.
             </p>
             <p className="text-charcoal/70 text-base md:text-lg leading-relaxed">
               Eighteen years of senior international experience across the Gulf,
@@ -71,7 +74,7 @@ export default function AboutUs() {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="mt-12 flex items-center"
           >
-            <Link href="/about" className="group flex flex-col">
+            <Link href={brand.href("/about")} className="group flex flex-col">
               <span className="text-gold text-sm font-semibold tracking-[0.15em] uppercase pb-2">
                 More About Shareef Khatib <span className="group-hover:ml-2 transition-all inline-block">&rarr;</span>
               </span>

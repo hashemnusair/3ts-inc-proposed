@@ -9,6 +9,7 @@ import {
   Users,
   Buildings,
 } from "@phosphor-icons/react";
+import { useBrand } from "@/components/brand/BrandProvider";
 
 const listVariants: Variants = {
   hidden: { opacity: 0 },
@@ -34,6 +35,8 @@ const clients = [
 ];
 
 export default function WhoWeWorkWith() {
+  const brand = useBrand();
+
   return (
     <section className="w-full bg-[#f8f6f2] py-24 px-6 md:px-16 lg:px-24 border-t border-[#edebe4]">
       <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center lg:items-start">
@@ -63,7 +66,7 @@ export default function WhoWeWorkWith() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="text-charcoal/70 text-lg md:text-xl leading-relaxed max-w-lg"
           >
-            3Ts works with the sponsors and senior leaders of transformations,
+            {brand.shortName} works with the sponsors and senior leaders of transformations,
             reforms, and consequential leadership transitions — across
             governments, multilaterals, sovereign-backed institutions, family
             enterprises, and large private-sector organizations.

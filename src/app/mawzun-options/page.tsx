@@ -1,14 +1,26 @@
 import Link from "next/link";
 import Image from "next/image";
-import { pageMetadata } from "@/lib/metadata";
+import type { Metadata } from "next";
 
-export const metadata = pageMetadata({
-  title: "Mawzun Brand Options — 3Ts Consulting",
+export const metadata: Metadata = {
+  title: "Mawzun Brand Options",
   description:
     "Preview two ways to integrate the Mawzun Advisory name and logo without changing the current live site.",
-  path: "/mawzun-options",
-  image: "/og/home.webp",
-});
+  openGraph: {
+    title: "Mawzun Brand Options",
+    description:
+      "Preview two ways to integrate the Mawzun Advisory name and logo without changing the current live site.",
+    siteName: "Mawzun Advisory",
+    images: [{ url: "/mawzun-logo.png", width: 1200, height: 1200 }],
+  },
+  twitter: {
+    card: "summary",
+    title: "Mawzun Brand Options",
+    description:
+      "Preview two ways to integrate the Mawzun Advisory name and logo without changing the current live site.",
+    images: ["/mawzun-logo.png"],
+  },
+};
 
 const options = [
   {

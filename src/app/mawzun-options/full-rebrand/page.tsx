@@ -1,14 +1,26 @@
-import MawzunPreview from "@/components/mawzun-options/MawzunPreview";
-import { pageMetadata } from "@/lib/metadata";
+import Home from "@/app/page";
+import type { Metadata } from "next";
 
-export const metadata = pageMetadata({
-  title: "Mawzun Full Rebrand Option — 3Ts Consulting",
+export const metadata: Metadata = {
+  title: "Mawzun Full Rebrand Option",
   description:
     "A preview of a fuller Mawzun Advisory visual system using the same site structure, copy, and interactions.",
-  path: "/mawzun-options/full-rebrand",
-  image: "/og/home.webp",
-});
+  openGraph: {
+    title: "Mawzun Full Rebrand Option",
+    description:
+      "A preview of a fuller Mawzun Advisory visual system using the same site structure, copy, and interactions.",
+    siteName: "Mawzun Advisory",
+    images: [{ url: "/mawzun-logo.png", width: 1200, height: 1200 }],
+  },
+  twitter: {
+    card: "summary",
+    title: "Mawzun Full Rebrand Option",
+    description:
+      "A preview of a fuller Mawzun Advisory visual system using the same site structure, copy, and interactions.",
+    images: ["/mawzun-logo.png"],
+  },
+};
 
 export default function MawzunFullRebrandPage() {
-  return <MawzunPreview variant="full-rebrand" />;
+  return <Home />;
 }
