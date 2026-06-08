@@ -109,8 +109,7 @@ export default function ServicesPage() {
               <div className="h-[2px] w-12 bg-gold/60"></div>
             </div>
             <p className="mb-8 font-serif text-3xl leading-snug text-cream md:text-5xl">
-              The service is not only the framework. It is the judgment inside
-              the room.
+              These processes all create a structure. The product of each is clearer decisions and more durable alignment.
             </p>
             <p className="text-base leading-relaxed text-cream/68 md:text-lg">
               Shareef designs the intervention, prepares the stakeholders, and

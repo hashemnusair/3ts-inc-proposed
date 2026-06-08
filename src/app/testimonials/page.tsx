@@ -77,9 +77,7 @@ export default function TestimonialsPage() {
       <section className="w-full bg-[#111613] px-6 py-20 text-center md:px-16 lg:px-24">
         <div className="mx-auto max-w-3xl">
           <p className="mb-8 font-serif text-2xl leading-relaxed text-cream md:text-3xl">
-            If you are considering whether this work might be relevant to your
-            situation, the right first step is a short, confidential
-            conversation.
+            If this work feels relevant, the right first step is a short, confidential conversation.
           </p>
           <a
             href="mailto:shareef@3ts-inc.com"

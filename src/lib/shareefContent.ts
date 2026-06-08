@@ -17,6 +17,64 @@ export const homeImpactStats = [
   },
 ];
 
+export const homeServices = [
+  {
+    id: "alignment-read",
+    number: "01",
+    title: "Alignment Read",
+    duration: "Two weeks",
+    essence: "Diagnose",
+    description:
+      "A two-week senior diagnostic. Confidential interviews with the principals and key stakeholders, a map of where alignment is breaking, and a candid sponsor memo on what is at stake and what should happen next. Often the first engagement.",
+  },
+  {
+    id: "decision-sprint",
+    number: "02",
+    title: "Decision Sprint",
+    duration: "Four–six weeks",
+    essence: "Decide",
+    description:
+      "A four-to-six-week engagement built around a significant decision or a consequential convening. Stakeholder preparation, decision architecture, the room itself, and a thirty-day follow-through to ensure decisions made in the room translate into action.",
+  },
+  {
+    id: "retained-advisory",
+    number: "03",
+    title: "Retained Advisory",
+    duration: "Ongoing",
+    essence: "Sustain",
+    description:
+      "Ongoing senior advisory through the life of a transformation, reform, or governance initiative. Confidential support for the sponsor, repeated convenings, principal coaching, and quiet judgment between the formal moments.",
+  },
+  {
+    id: "first-90-days",
+    number: "04",
+    title: "First 90 Days",
+    duration: "Three months",
+    essence: "Transition",
+    description:
+      "Three months of confidential support for newly-appointed senior leaders stepping into politically sensitive roles. Stakeholder mapping, sponsor coaching, and judgment through the early decisions that shape the rest of the tenure.",
+  },
+];
+
+export const homePatterns = [
+  {
+    id: "fragile-alignment",
+    text: "When the stakes are high and alignment is fragile.",
+  },
+  {
+    id: "stalled-decision",
+    text: "When a consequential decision is stalled by competing priorities.",
+  },
+  {
+    id: "room-design",
+    text: "When the room needs design before the meeting begins.",
+  },
+  {
+    id: "new-leader",
+    text: "When a new senior leader needs judgment in a politically sensitive first chapter.",
+  },
+];
+
 export const homepageTestimonials = [
   {
     quote:
@@ -203,7 +261,8 @@ export const impactSections = [
     eyebrow: "First 90 Days",
     title:
       "Confidential support for newly-appointed senior leaders stepping into politically sensitive or high-stakes roles.",
-    intro: "",
+    intro:
+      "All begin from a different starting point, but the goal in each case is the same: a leader who enters a consequential chapter with clarity about their mandate, their stakeholders, and the decisions that will define the period ahead and their legacy.",
     cases: [
       {
         title: "New program director onboarding — Mozambique and Malaysia.",
@@ -235,8 +294,6 @@ export const impactSections = [
         ],
       },
     ],
-    closing:
-      "The goal in each case is the same: a leader who enters a consequential chapter with clarity about their mandate, their stakeholders, and the decisions that will define the period ahead and their legacy.",
   },
 ];
 

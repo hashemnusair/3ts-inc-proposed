@@ -114,11 +114,6 @@ export default function ImpactAccordions() {
                           </div>
                         ))}
                       </div>
-                      {section.closing ? (
-                        <p className="mt-8 font-serif text-2xl italic leading-snug text-charcoal">
-                          {section.closing}
-                        </p>
-                      ) : null}
                     </div>
                   </div>
                 </div>
