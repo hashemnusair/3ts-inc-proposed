@@ -377,10 +377,6 @@ html[data-nav-at-top="true"] .mawzun-full .site-nav[data-home="true"][data-menu-
   object-fit: cover;
 }
 
-.mawzun-full img:not([src="/mawzun-logo.png"]) {
-  filter: saturate(0.78) contrast(1.03);
-}
-
 .mawzun-full .bg-gradient-to-r.from-black\/75,
 .mawzun-full .bg-gradient-to-t.from-black\/40 {
   background: linear-gradient(90deg, rgb(32 59 58 / 0.88), rgb(32 59 58 / 0.62), rgb(32 59 58 / 0.2)) !important;
