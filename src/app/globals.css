@@ -127,6 +127,7 @@ html[data-nav-at-top="true"] .site-nav[data-home="true"][data-menu-open="false"]
   --mawzun-line-strong: rgb(41 71 70 / 0.3);
   --mawzun-line-light: rgb(255 247 232 / 0.18);
   --mawzun-accent: #386763;
+  --mawzun-highlight: #d9c08f;
   --color-cream: var(--mawzun-ivory);
   --color-charcoal: var(--mawzun-ink);
   --color-gold: var(--mawzun-accent);
@@ -259,12 +260,12 @@ html[data-nav-at-top="true"] .mawzun-full .site-nav[data-home="true"][data-menu-
 .mawzun-full .text-charcoal\/65,
 .mawzun-full .text-charcoal\/58,
 .mawzun-full .text-charcoal\/55 {
-  color: rgb(41 71 70 / 0.62) !important;
+  color: rgb(41 71 70 / 0.72) !important;
 }
 
 .mawzun-full .text-charcoal\/40,
 .mawzun-full .text-charcoal\/35 {
-  color: rgb(41 71 70 / 0.46) !important;
+  color: rgb(41 71 70 / 0.58) !important;
 }
 
 .mawzun-full .text-cream,
@@ -283,7 +284,7 @@ html[data-nav-at-top="true"] .mawzun-full .site-nav[data-home="true"][data-menu-
 
 .mawzun-full .text-white\/60,
 .mawzun-full .text-white\/50 {
-  color: rgb(255 247 232 / 0.62) !important;
+  color: rgb(255 247 232 / 0.72) !important;
 }
 
 .mawzun-full .text-cream\/85 {
@@ -292,12 +293,12 @@ html[data-nav-at-top="true"] .mawzun-full .site-nav[data-home="true"][data-menu-
 
 .mawzun-full .text-cream\/68,
 .mawzun-full .text-cream\/55 {
-  color: rgb(255 247 232 / 0.68) !important;
+  color: rgb(255 247 232 / 0.78) !important;
 }
 
 .mawzun-full .text-cream\/45,
 .mawzun-full .text-cream\/40 {
-  color: rgb(255 247 232 / 0.5) !important;
+  color: rgb(255 247 232 / 0.62) !important;
 }
 
 .mawzun-full .text-gold,
@@ -359,7 +360,6 @@ html[data-nav-at-top="true"] .mawzun-full .site-nav[data-home="true"][data-menu-
   color: var(--mawzun-ivory) !important;
 }
 
-.mawzun-full .group.relative.overflow-hidden,
 .mawzun-full aside.border,
 .mawzun-full [class*="grid gap-px"] > .bg-cream,
 .mawzun-full [class*="grid grid-cols-5"] > .bg-cream,
@@ -368,18 +368,60 @@ html[data-nav-at-top="true"] .mawzun-full .site-nav[data-home="true"][data-menu-
   border-color: var(--mawzun-line) !important;
 }
 
-.mawzun-full .group.relative.overflow-hidden:hover {
-  background: #fffaf0 !important;
-  border-color: var(--mawzun-line-strong) !important;
-}
-
 .mawzun-full img[src="/mawzun-logo.png"] {
   object-fit: cover;
 }
 
-.mawzun-full .bg-gradient-to-r.from-black\/75,
-.mawzun-full .bg-gradient-to-t.from-black\/40 {
-  background: linear-gradient(90deg, rgb(32 59 58 / 0.88), rgb(32 59 58 / 0.62), rgb(32 59 58 / 0.2)) !important;
+.mawzun-full img:not([src="/mawzun-logo.png"]) {
+  filter: none !important;
+}
+
+.mawzun-full .group.relative.overflow-hidden.bg-\[\#fcfbf9\],
+.mawzun-full .group.relative.overflow-hidden.bg-white,
+.mawzun-full .group.relative.overflow-hidden.bg-cream {
+  background: var(--mawzun-ivory) !important;
+  border-color: var(--mawzun-line) !important;
+}
+
+.mawzun-full .group.relative.overflow-hidden.bg-\[\#fcfbf9\]:hover,
+.mawzun-full .group.relative.overflow-hidden.bg-white:hover,
+.mawzun-full .group.relative.overflow-hidden.bg-cream:hover {
+  background: #fffaf0 !important;
+  border-color: var(--mawzun-line-strong) !important;
+}
+
+.mawzun-full section.bg-\[\#111613\] [class*="grid-cols-1"] {
+  background-color: rgb(255 247 232 / 0.2) !important;
+  border-color: rgb(255 247 232 / 0.2) !important;
+}
+
+.mawzun-full section.bg-\[\#111613\] .group.relative.overflow-hidden {
+  background: var(--mawzun-ink-deep) !important;
+  border-color: rgb(255 247 232 / 0.16) !important;
+}
+
+.mawzun-full section.bg-\[\#111613\] .group.relative.overflow-hidden:hover {
+  background: #294746 !important;
+  border-color: rgb(228 212 183 / 0.42) !important;
+}
+
+.mawzun-full section.bg-\[\#111613\] .text-cream,
+.mawzun-full section.bg-\[\#111613\] .text-cream\/85 {
+  color: var(--mawzun-ivory) !important;
+}
+
+.mawzun-full section.bg-\[\#111613\] .text-cream\/55,
+.mawzun-full section.bg-\[\#111613\] .text-cream\/68 {
+  color: rgb(255 247 232 / 0.86) !important;
+}
+
+.mawzun-full section.bg-\[\#111613\] .text-gold,
+.mawzun-full section.bg-\[\#111613\] [class*="text-gold\/"] {
+  color: var(--mawzun-sand) !important;
+}
+
+.mawzun-full section.bg-\[\#111613\] .group.relative.overflow-hidden:hover p {
+  color: rgb(255 247 232 / 0.95) !important;
 }
 
 .mawzun-full a.group.flex.flex-col {
@@ -449,6 +491,6 @@ html[data-nav-at-top="true"] .mawzun-full .site-nav[data-home="true"][data-menu-
 }
 
 .mawzun-full ::selection {
-  background-color: var(--mawzun-ink);
-  color: var(--mawzun-ivory);
+  background-color: var(--mawzun-highlight);
+  color: var(--mawzun-ink-deep);
 }
