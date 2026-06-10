@@ -144,6 +144,7 @@ export default function Navbar() {
     <>
       <header
         data-home={isHome ? "true" : "false"}
+        data-transparent={navIsTransparent ? "true" : "false"}
         data-menu-open={isOpen ? "true" : "false"}
         data-menu-navigating={isMenuNavigating ? "true" : "false"}
         className={`site-nav w-full fixed top-0 left-0 right-0 z-[60] transition-all duration-500 ${

@@ -3,8 +3,11 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { homepageTestimonials } from "@/lib/shareefContent";
+import { useBrand } from "@/components/brand/BrandProvider";
 
 export default function Testimonials() {
+  const brand = useBrand();
+
   return (
     <section className="relative w-full flex flex-col justify-between border-t border-[#edebe4]">
       {/* Subtle Background pattern */}
@@ -67,7 +70,7 @@ export default function Testimonials() {
           transition={{ duration: 0.8, delay: 0.3 }}
           className="flex items-center pt-8 border-t border-charcoal/10"
         >
-          <Link href="/testimonials" className="group flex flex-col">
+          <Link href={brand.href("/testimonials")} className="group flex flex-col">
             <span className="text-gold text-sm font-semibold tracking-[0.15em] uppercase pb-2">
               Visit Testimonials Page <span className="group-hover:ml-2 transition-all inline-block">&rarr;</span>
             </span>

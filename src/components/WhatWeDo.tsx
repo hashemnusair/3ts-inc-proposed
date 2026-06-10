@@ -4,8 +4,10 @@ import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import Link from "next/link";
 import { homeServices } from "@/lib/shareefContent";
+import { useBrand } from "@/components/brand/BrandProvider";
 
 export default function WhatWeDo() {
+  const brand = useBrand();
   const [active, setActive] = useState(0);
 
   return (
@@ -174,7 +176,7 @@ export default function WhatWeDo() {
           transition={{ duration: 0.8, delay: 0.5 }}
           className="mt-16 flex items-center"
         >
-          <Link href="/approach" className="group flex flex-col">
+          <Link href={brand.href("/approach")} className="group flex flex-col">
             <span className="text-gold text-sm font-semibold tracking-[0.15em] uppercase pb-2">
               Read More About How We Work{" "}
               <span className="group-hover:ml-2 transition-all inline-block">

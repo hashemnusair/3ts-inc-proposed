@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import type { Variants } from "framer-motion";
 import Link from "next/link";
+import { useBrand } from "@/components/brand/BrandProvider";
 
 const cases = [
   {
@@ -68,6 +69,8 @@ const mapDots = Array.from({ length: 400 }).flatMap((_, i) => {
 });
 
 export default function SelectedEngagements() {
+  const brand = useBrand();
+
   return (
     <section className="w-full bg-cream py-24 px-6 md:px-16 lg:px-24 border-t border-[#edebe4] relative overflow-hidden">
       {/* Background Stylized Map (Abstract representation) */}
@@ -179,7 +182,7 @@ export default function SelectedEngagements() {
           transition={{ duration: 0.8, delay: 0.5 }}
           className="mt-16 flex items-center"
         >
-          <Link href="/impact" className="group flex flex-col">
+          <Link href={brand.href("/impact")} className="group flex flex-col">
             <span className="text-gold text-sm font-semibold tracking-[0.15em] uppercase pb-2">
               More engagements <span className="group-hover:ml-2 transition-all inline-block">&rarr;</span>
             </span>
