@@ -15,33 +15,33 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: "3Ts Consulting — Senior Advisory for High-Stakes Alignment",
+  title: "Mawzun Advisory — Senior Advisory for High-Stakes Alignment",
   description:
     "Senior advisory for high-stakes alignment in transformation settings across the MENA region and complex environments.",
   metadataBase: new URL("https://3ts-inc-proposed.pages.dev"),
   openGraph: {
-    title: "3Ts Consulting — Senior Advisory for High-Stakes Alignment",
+    title: "Mawzun Advisory — Senior Advisory for High-Stakes Alignment",
     description:
       "Senior advisory for high-stakes alignment in transformation settings.",
     url: "https://3ts-inc-proposed.pages.dev",
-    siteName: "3Ts Consulting",
+    siteName: "Mawzun Advisory",
     images: [
       {
-        url: "/og/home.webp",
+        url: "/mawzun-logo.png",
         width: 1200,
-        height: 630,
-        alt: "3Ts Consulting",
+        height: 1200,
+        alt: "Mawzun Advisory",
       },
     ],
     locale: "en_US",
     type: "website",
   },
   twitter: {
-    card: "summary_large_image",
-    title: "3Ts Consulting — Senior Advisory for High-Stakes Alignment",
+    card: "summary",
+    title: "Mawzun Advisory — Senior Advisory for High-Stakes Alignment",
     description:
       "Senior advisory for high-stakes alignment in transformation settings.",
-    images: ["/og/home.webp"],
+    images: ["/mawzun-logo.png"],
   },
 };
 

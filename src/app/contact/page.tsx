@@ -3,7 +3,7 @@ import Footer from "@/components/Footer";
 import { pageMetadata } from "@/lib/metadata";
 
 export const metadata = pageMetadata({
-  title: "Start with a Conversation — 3Ts Consulting",
+  title: "Start with a Conversation — Mawzun Advisory",
   description:
     "Start with a short, confidential conversation about a stalled decision, a room that needs design, or a senior transition underway.",
   path: "/contact",

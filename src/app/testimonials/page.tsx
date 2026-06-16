@@ -4,7 +4,7 @@ import { clientReflections } from "@/lib/shareefContent";
 import { pageMetadata } from "@/lib/metadata";
 
 export const metadata = pageMetadata({
-  title: "Client Reflections — 3Ts Consulting",
+  title: "Client Reflections — Mawzun Advisory",
   description:
     "Selected reflections from clients across program leadership, organisational alignment, facilitation, and coaching engagements.",
   path: "/testimonials",

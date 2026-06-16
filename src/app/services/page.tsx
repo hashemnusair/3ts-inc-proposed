@@ -5,7 +5,7 @@ import Image from "next/image";
 import { pageMetadata } from "@/lib/metadata";
 
 export const metadata = pageMetadata({
-  title: "Services — 3Ts Consulting",
+  title: "Services — Mawzun Advisory",
   description:
     "Structured advisory interventions for alignment reads, decision sprints, retained advisory, and first 90 day leadership transitions.",
   path: "/services",

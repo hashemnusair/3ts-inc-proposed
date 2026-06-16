@@ -4,7 +4,7 @@ import ImpactAccordions from "@/components/impact/ImpactAccordions";
 import { pageMetadata } from "@/lib/metadata";
 
 export const metadata = pageMetadata({
-  title: "Impact — 3Ts Consulting",
+  title: "Impact — Mawzun Advisory",
   description:
     "Representative cases drawn from public-safe engagements and organised by the type of problem they addressed.",
   path: "/impact",

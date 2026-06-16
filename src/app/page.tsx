@@ -11,7 +11,7 @@ import ImageBreak from "@/components/ImageBreak";
 import { pageMetadata } from "@/lib/metadata";
 
 export const metadata = pageMetadata({
-  title: "3Ts Consulting — Senior Advisory for High-Stakes Alignment",
+  title: "Mawzun Advisory — Senior Advisory for High-Stakes Alignment",
   description:
     "Senior advisory for sponsors navigating high-stakes alignment, consequential rooms, and transformation settings.",
   path: "/",

@@ -29,21 +29,21 @@ export default function Footer() {
 
         <div className="flex flex-col items-end text-right">
           {brand.logoSrc ? (
-            <div className="relative mb-5 h-20 w-20 overflow-hidden border border-cream/10">
+            <div className="relative mb-5 h-24 w-24 overflow-hidden border border-cream/10">
               <Image
                 src={brand.logoSrc}
                 alt={brand.logoAlt ?? brand.name}
                 fill
-                sizes="80px"
+                sizes="96px"
                 className="object-cover"
               />
             </div>
           ) : null}
-          <div className="font-serif text-3xl text-cream mb-2">
+          <div className="font-serif text-2xl md:text-[1.7rem] text-cream mb-2">
             {brand.name}
           </div>
           {brand.arabicName ? (
-            <div className="mb-3 text-xs font-semibold uppercase tracking-[0.2em] text-gold">
+            <div className="mb-3 text-base font-semibold uppercase tracking-[0.12em] text-gold">
               {brand.arabicName}
             </div>
           ) : null}

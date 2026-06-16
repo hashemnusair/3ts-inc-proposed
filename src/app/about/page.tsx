@@ -4,7 +4,7 @@ import Image from "next/image";
 import { pageMetadata } from "@/lib/metadata";
 
 export const metadata = pageMetadata({
-  title: "About Shareef Khatib — 3Ts Consulting",
+  title: "About Shareef Khatib — Mawzun Advisory",
   description:
     "Shareef Samir Khatib is a senior adviser for high-stakes alignment in transformation settings.",
   path: "/about",

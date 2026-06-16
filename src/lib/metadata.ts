@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 const siteUrl = "https://3ts-inc-proposed.pages.dev";
-const siteName = "3Ts Consulting";
+const siteName = "Mawzun Advisory";
 
 type PageMetadataInput = {
   title: string;

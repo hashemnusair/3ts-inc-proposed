@@ -2,7 +2,7 @@
 
 import { createContext, useContext } from "react";
 
-type BrandMode = "default" | "mawzun-name" | "mawzun-full";
+type BrandMode = "mawzun-name";
 
 type BrandConfig = {
   mode: BrandMode;
@@ -17,12 +17,15 @@ type BrandConfig = {
 };
 
 const defaultBrand: BrandConfig = {
-  mode: "default",
+  mode: "mawzun-name",
   basePath: "",
-  name: "3Ts Consulting",
-  shortName: "3Ts",
-  legalName: "3Ts Consulting, Inc.",
+  name: "Mawzun Advisory",
+  shortName: "Mawzun",
+  arabicName: "مَوزُون",
+  legalName: "Mawzun Advisory",
   tagline: "Senior advisory for high-stakes alignment in transformation settings",
+  logoSrc: "/mawzun-logo.png",
+  logoAlt: "Mawzun Advisory logo",
 };
 
 const BrandContext = createContext<BrandConfig>(defaultBrand);

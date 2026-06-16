@@ -160,27 +160,27 @@ export default function Navbar() {
           className="w-full px-6 md:px-12 py-6 flex items-center justify-between"
         >
           <div className="flex items-center space-x-6">
-            <Link href={brand.href("/")} className="flex items-center gap-3 z-[70]">
+            <Link href={brand.href("/")} className="flex items-center gap-3.5 z-[70]">
               {brand.logoSrc ? (
-                <span className="relative h-10 w-10 overflow-hidden border border-current/10">
+                <span className="relative h-12 w-12 overflow-hidden border border-current/10">
                   <Image
                     src={brand.logoSrc}
                     alt={brand.logoAlt ?? brand.name}
                     fill
-                    sizes="40px"
+                    sizes="48px"
                     className="object-cover"
                   />
                 </span>
               ) : null}
               <span className="flex flex-col">
-              <span className={`site-nav-brand font-serif text-2xl md:text-3xl tracking-tight ${brandToneClass}`}>
-                {brand.name}
-              </span>
-              {brand.arabicName ? (
-                <span className={`site-nav-brand mt-1 text-[10px] font-semibold uppercase tracking-[0.18em] ${brandToneClass}`}>
-                  {brand.arabicName}
+                <span className={`site-nav-brand font-serif text-[19px] md:text-2xl tracking-tight ${brandToneClass}`}>
+                  {brand.name}
                 </span>
-              ) : null}
+                {brand.arabicName ? (
+                  <span className={`site-nav-brand mt-1 text-sm md:text-[15px] font-semibold uppercase tracking-[0.12em] ${brandToneClass}`}>
+                    {brand.arabicName}
+                  </span>
+                ) : null}
               </span>
             </Link>
             <div className={`site-nav-divider hidden md:block w-px h-10 ${dividerToneClass}`}></div>
