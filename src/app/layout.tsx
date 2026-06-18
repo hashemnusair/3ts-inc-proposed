@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Outfit, Playfair_Display } from "next/font/google";
+import { siteUrl } from "@/lib/metadata";
 import "./globals.css";
 
 const outfit = Outfit({
@@ -18,12 +19,12 @@ export const metadata: Metadata = {
   title: "Mawzun Advisory — Senior Advisory for High-Stakes Alignment",
   description:
     "Senior advisory for high-stakes alignment in transformation settings across the MENA region and complex environments.",
-  metadataBase: new URL("https://3ts-inc-proposed.pages.dev"),
+  metadataBase: new URL(siteUrl),
   openGraph: {
     title: "Mawzun Advisory — Senior Advisory for High-Stakes Alignment",
     description:
       "Senior advisory for high-stakes alignment in transformation settings.",
-    url: "https://3ts-inc-proposed.pages.dev",
+    url: siteUrl,
     siteName: "Mawzun Advisory",
     images: [
       {
